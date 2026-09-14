@@ -1,0 +1,63 @@
+name: Update
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish
+        type: boolean
+        default: false
+  schedule:
+    - cron: '7,37 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: programme-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || vars.PROGRAMME_SCHEDULE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      WRANGLER_SEND_METRICS: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        if: github.event_name == 'schedule' || inputs.publish
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache
+            output
+          key: programme-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: programme-v1-
+      - run: npm ci --no-audit --no-fund
+        if: github.event_name == 'schedule' || inputs.publish
+      - run: python3 -m unittest discover -s tests -v
+      - name: Collect
+        run: python3 collect.py --refresh-minutes 30
+      - name: Cache
+        if: ${{ always() && !cancelled() }}
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .cache
+            output
+          key: programme-v1-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Export
+        run: python3 export_static.py
+      - name: Deploy
+        if: github.event_name == 'schedule' || inputs.publish
+        run: npm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

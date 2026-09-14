@@ -1,0 +1,10 @@
+{
+  "name": "titan-programme-collector",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "check:deploy": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": { "wrangler": "4.131.0" }
+}

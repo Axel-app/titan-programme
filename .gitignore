@@ -1,0 +1,9 @@
+.cache/
+output/
+__pycache__/
+tests/__pycache__/
+dist/
+node_modules/
+.wrangler/
+.env*
+catalogue-report.json

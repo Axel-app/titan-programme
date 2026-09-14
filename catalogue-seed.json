@@ -1,0 +1,321 @@
+[
+  {
+    "id": "fr.tf1",
+    "country": "FR",
+    "source": "oqee",
+    "sourceId": "536",
+    "name": "TF1",
+    "feed": "national",
+    "timezone": "Europe/Paris",
+    "aliases": [
+      "TF1 HD",
+      "TF1 FHD+"
+    ]
+  },
+  {
+    "id": "fr.france2",
+    "country": "FR",
+    "source": "oqee",
+    "sourceId": "270",
+    "name": "France 2",
+    "feed": "national",
+    "timezone": "Europe/Paris",
+    "aliases": [
+      "FRANCE 2 FHD"
+    ]
+  },
+  {
+    "id": "fr.m6",
+    "country": "FR",
+    "source": "oqee",
+    "sourceId": "537",
+    "name": "M6",
+    "feed": "national",
+    "timezone": "Europe/Paris",
+    "aliases": [
+      "M6 HD"
+    ]
+  },
+  {
+    "id": "fr.w9",
+    "country": "FR",
+    "source": "oqee",
+    "sourceId": "409",
+    "name": "W9",
+    "feed": "national",
+    "timezone": "Europe/Paris",
+    "aliases": []
+  },
+  {
+    "id": "fr.canalplus-box-office",
+    "country": "FR",
+    "source": "oqee",
+    "sourceId": "1164",
+    "name": "CANAL+ Box Office",
+    "feed": "national",
+    "timezone": "Europe/Paris",
+    "aliases": [
+      "CANAL+ BOX OFFICE FHD",
+      "CANAL+ BOX OFFICE FHD+"
+    ]
+  },
+  {
+    "id": "fr.france3.national",
+    "country": "FR",
+    "source": "oqee",
+    "sourceId": "1415",
+    "name": "France 3 national",
+    "feed": "national",
+    "timezone": "Europe/Paris",
+    "aliases": [
+      "FRANCE 3 NATIONAL"
+    ]
+  },
+  {
+    "id": "gb.bbc-one.london",
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3000",
+    "name": "BBC One London",
+    "feed": "London",
+    "timezone": "Europe/London",
+    "aliases": [
+      "BBC ONE LONDON HD",
+      "BBC ONE LON HD"
+    ]
+  },
+  {
+    "id": "gb.sky-news.uk",
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "4050",
+    "name": "Sky News UK",
+    "feed": "UK",
+    "timezone": "Europe/London",
+    "aliases": [
+      "SKY NEWS UK HD"
+    ]
+  },
+  {
+    "id": "de.das-erste",
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "373",
+    "name": "Das Erste",
+    "feed": "Germany",
+    "timezone": "Europe/Berlin",
+    "aliases": [
+      "DAS ERSTE HD",
+      "ARD"
+    ]
+  },
+  {
+    "id": "de.zdf",
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "408",
+    "name": "ZDF",
+    "feed": "Germany",
+    "timezone": "Europe/Berlin",
+    "aliases": [
+      "ZDF HD"
+    ]
+  },
+  {
+    "id": "it.rai1",
+    "country": "IT",
+    "source": "rai",
+    "sourceId": "rai-1",
+    "name": "Rai 1",
+    "feed": "Italy",
+    "timezone": "Europe/Rome",
+    "aliases": [
+      "RAI 1 HD"
+    ]
+  },
+  {
+    "id": "it.rai2",
+    "country": "IT",
+    "source": "rai",
+    "sourceId": "rai-2",
+    "name": "Rai 2",
+    "feed": "Italy",
+    "timezone": "Europe/Rome",
+    "aliases": [
+      "RAI 2 HD"
+    ]
+  },
+  {
+    "id": "es.la1.madrid",
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "TVE",
+    "name": "La 1",
+    "feed": "Madrid",
+    "timezone": "Europe/Madrid",
+    "aliases": [
+      "LA 1 HD",
+      "TVE 1"
+    ]
+  },
+  {
+    "id": "es.antena3",
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "A3",
+    "name": "Antena 3",
+    "feed": "Spain",
+    "timezone": "Europe/Madrid",
+    "aliases": [
+      "ANTENA 3 HD"
+    ]
+  },
+  {
+    "id": "es.telecinco",
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "T5",
+    "name": "Telecinco",
+    "feed": "Spain",
+    "timezone": "Europe/Madrid",
+    "aliases": [
+      "TELECINCO HD"
+    ]
+  },
+  {
+    "id": "pt.rtp1",
+    "country": "PT",
+    "source": "vodafone",
+    "sourceId": "3028",
+    "name": "RTP 1",
+    "feed": "Portugal",
+    "timezone": "Europe/Lisbon",
+    "aliases": [
+      "RTP1 HD"
+    ]
+  },
+  {
+    "id": "pt.sic",
+    "country": "PT",
+    "source": "vodafone",
+    "sourceId": "2670",
+    "name": "SIC",
+    "feed": "Portugal",
+    "timezone": "Europe/Lisbon",
+    "aliases": [
+      "SIC HD"
+    ]
+  },
+  {
+    "id": "pt.tvi",
+    "country": "PT",
+    "source": "vodafone",
+    "sourceId": "2671",
+    "name": "TVI",
+    "feed": "Portugal",
+    "timezone": "Europe/Lisbon",
+    "aliases": [
+      "TVI HD"
+    ]
+  },
+  {
+    "id": "us.espn",
+    "country": "US",
+    "source": "tvpassport",
+    "sourceId": "espn/594",
+    "name": "ESPN",
+    "feed": "national",
+    "timezone": "America/New_York",
+    "aliases": [
+      "ESPN HD"
+    ]
+  },
+  {
+    "id": "us.cnn",
+    "country": "US",
+    "source": "tvpassport",
+    "sourceId": "cnn/70",
+    "name": "CNN US",
+    "feed": "US",
+    "timezone": "America/New_York",
+    "aliases": [
+      "CNN USA"
+    ]
+  },
+  {
+    "id": "us.hbo.east",
+    "country": "US",
+    "source": "tvpassport",
+    "sourceId": "hbo--eastern-feed/614",
+    "name": "HBO East",
+    "feed": "East",
+    "timezone": "America/New_York",
+    "aliases": [
+      "HBO EAST HD",
+      "HBO EASTERN"
+    ]
+  },
+  {
+    "id": "us.hbo.west",
+    "country": "US",
+    "source": "tvpassport",
+    "sourceId": "hbo--pacific-feed/1472",
+    "name": "HBO West",
+    "feed": "West",
+    "timezone": "America/New_York",
+    "aliases": [
+      "HBO WEST HD",
+      "HBO PACIFIC"
+    ]
+  },
+  {
+    "id": "br.globo.sao-paulo",
+    "country": "BR",
+    "source": "mitv",
+    "sourceId": "globo-sp",
+    "name": "Globo SP",
+    "feed": "São Paulo",
+    "timezone": "America/Sao_Paulo",
+    "aliases": [
+      "GLOBO SAO PAULO",
+      "GLOBO SP HD"
+    ]
+  },
+  {
+    "id": "br.globo.rio-de-janeiro",
+    "country": "BR",
+    "source": "mitv",
+    "sourceId": "globo-rj",
+    "name": "Globo RJ",
+    "feed": "Rio de Janeiro",
+    "timezone": "America/Sao_Paulo",
+    "aliases": [
+      "GLOBO RIO DE JANEIRO",
+      "GLOBO RJ HD"
+    ]
+  },
+  {
+    "id": "br.record.national",
+    "country": "BR",
+    "source": "mitv",
+    "sourceId": "record",
+    "name": "Record TV",
+    "feed": "national",
+    "timezone": "America/Sao_Paulo",
+    "aliases": [
+      "RECORD TV HD"
+    ]
+  },
+  {
+    "id": "br.sbt.national",
+    "country": "BR",
+    "source": "mitv",
+    "sourceId": "sbt",
+    "name": "SBT",
+    "feed": "national",
+    "timezone": "America/Sao_Paulo",
+    "aliases": [
+      "SBT HD"
+    ]
+  }
+]
