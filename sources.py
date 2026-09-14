@@ -244,7 +244,10 @@ def collect_group(client, channels, now):
             return None
     timing = 'source-format-checked'
     basis = ''
-    if source == 'oqee':
+    if source in ('shahid', 'tvplus', 'onet', 'rts'):
+        from additional_sources import collect_additional
+        basis = collect_additional(source, channels, now, fetch, rows, warnings)
+    elif source == 'oqee':
 
         for hour in (now // 3600 * 3600, (now // 3600 + 1) * 3600):
             guide = fetch(f'https://api.oqee.net/api/v1/epg/all/{hour}')

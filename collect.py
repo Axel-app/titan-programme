@@ -17,7 +17,8 @@ from sources import collect_group
 ROOT = Path(__file__).resolve().parent
 REFRESH_SECONDS = 1800
 COUNTRIES = dict(FR='France', GB='Royaume-Uni', DE='Allemagne', IT='Italie',
-                 ES='Espagne', PT='Portugal', US='États-Unis', BR='Brésil', CA='Canada', MX='Mexique')
+                 ES='Espagne', PT='Portugal', US='États-Unis', BR='Brésil', CA='Canada', MX='Mexique',
+                 TR='Turquie', PL='Pologne', CH='Suisse', MENA='Moyen-Orient et Afrique du Nord')
 
 
 def encode(value):

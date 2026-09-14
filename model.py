@@ -16,6 +16,10 @@ IMAGE_HOSTS = {
     'meo': ('cdn-er-images.online.meo.pt',),
     'tvpassport': ('cdn.tvpassport.com',),
     'mitv': ('cdn.mitvstatic.com',),
+    'shahid': ('shahid.mbc.net',),
+    'tvplus': ('izmaottvsc14.tvplus.com.tr', 'gbzottvsc13.tvplus.com.tr'),
+    'onet': ('cdn.programtv.onet.pl',),
+    'rts': ('kingfisher.rts.ch', 'img.rts.ch', 'il.srgssr.ch'),
 }
 
 
@@ -26,7 +30,8 @@ def image_url(value, source):
     try:
         url = urlsplit(value)
         allowed = IMAGE_HOSTS[source]
-        if (url.scheme != 'https' or url.username or url.password or url.port not in (None, 443)
+        ports = (None, 443, 33207) if source == 'tvplus' else (None, 443)
+        if (url.scheme != 'https' or url.username or url.password or url.port not in ports
                 or not any(url.hostname == h or (source == 'oqee' and url.hostname
                            and url.hostname.endswith('.' + h)) for h in allowed)):
             return None

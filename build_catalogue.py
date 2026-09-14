@@ -15,11 +15,16 @@ import xml.etree.ElementTree as ET
 from http_client import Client, SafeRedirect, atomic_write
 
 ROOT = Path(__file__).resolve().parent
-LIMITS = dict(FR=450, GB=180, DE=140, IT=180, ES=90, PT=120, US=120, BR=140, CA=140, MX=60)
+LIMITS = dict(FR=450, GB=220, DE=200, IT=180, ES=120, PT=125, US=120, BR=140, CA=140, MX=60, TR=100, PL=80, CH=3, MENA=80)
 ZONES = dict(FR='Europe/Paris', GB='Europe/London', DE='Europe/Berlin', IT='Europe/Rome',
-             ES='Europe/Madrid', PT='Europe/Lisbon', US='America/New_York', BR='America/Sao_Paulo', CA='America/Toronto', MX='America/Mexico_City')
+             ES='Europe/Madrid', PT='Europe/Lisbon', US='America/New_York', BR='America/Sao_Paulo', CA='America/Toronto', MX='America/Mexico_City',
+             TR='Europe/Istanbul', PL='Europe/Warsaw', CH='Europe/Zurich', MENA='UTC')
 GITHUB = 'https://raw.githubusercontent.com/iptv-org/epg/master/sites/'
 REFERENCES = {
+    'tvplus.com.tr.channels.xml': GITHUB + 'tvplus.com.tr/tvplus.com.tr.channels.xml',
+    'programtv.onet.pl.channels.xml': GITHUB + 'programtv.onet.pl/programtv.onet.pl.channels.xml',
+    'shahid.mbc.net_ar.channels.xml': GITHUB + 'shahid.mbc.net/shahid.mbc.net_ar.channels.xml',
+    'rts.ch.channels.xml': GITHUB + 'rts.ch/rts.ch.channels.xml',
     'skyit-channels.json': 'https://apid.sky.it/gtv/v1/channels?env=DTH',
     'mi.tv_mx.channels.xml': GITHUB + 'mi.tv/mi.tv_mx.channels.xml',
     'oqee-plan.response': 'https://api.oqee.net/api/v6/service_plan',
@@ -110,7 +115,9 @@ def candidates(directory):
     specifications = [('GB', 'sky', 'sky.com.channels.xml'), ('IT', 'rai', 'rai-channels.response'),
         ('ES', 'movistar', 'movistarplus.es.channels.xml'), ('PT', 'vodafone', 'vodafone-channels.response'),
         ('US', 'tvpassport', 'tvpassport.com.channels.xml'), ('BR', 'mitv', 'br-sitemap-xml.response'),
-        ('CA', 'tvpassport', 'tvpassport.com.channels.xml'), ('MX', 'mitv', 'mi.tv_mx.channels.xml')]
+        ('CA', 'tvpassport', 'tvpassport.com.channels.xml'), ('MX', 'mitv', 'mi.tv_mx.channels.xml'),
+        ('TR', 'tvplus', 'tvplus.com.tr.channels.xml'), ('PL', 'onet', 'programtv.onet.pl.channels.xml'),
+        ('CH', 'rts', 'rts.ch.channels.xml'), ('MENA', 'shahid', 'shahid.mbc.net_ar.channels.xml')]
     for country, source, filename in specifications:
         nodes = list(ET.parse(directory / filename).getroot())
         source_ids = {n.get('site_id', '') for n in nodes}
@@ -143,6 +150,14 @@ def candidates(directory):
                 sid = sid.split('#', 1)[1]
 
                 if sid == 'globo-hd':
+                    continue
+            elif country == 'PL':
+                if not xmltv or node.get('lang') != 'pl' or re.search(r'adult|playboy|hustler|private|redlight', name, re.I):
+                    continue
+            elif country == 'MENA':
+
+
+                if re.search(r'USA|\.us@|Radio|FM\.', xmltv) or xmltv.startswith('MBC1Egypt.'):
                     continue
             add(country, source, sid, name, xmltv)
     for c in json.loads((directory / 'skyit-channels.json').read_text()).get('channels', []):
@@ -210,6 +225,15 @@ def assemble(groups, seed, previous=(), limits=LIMITS):
             rest.sort(key=lambda c: (priority.index(c['sourceId']) if c['sourceId'] in priority else 999, c['name']))
         elif country == 'BR':
             rest.sort(key=lambda c: (BR_PRIORITY.index(c['sourceId']) if c['sourceId'] in BR_PRIORITY else 999, c['name']))
+        elif country == 'PL':
+            priority = ['TVP1', 'TVP2', 'TVN', 'Polsat', 'TVN7', 'TV4', 'TVPInfo', 'TVPSport', 'TVN24', 'PolsatNews',
+                        'CanalPlusPremium', 'CanalPlusSport', 'CanalPlusSport2', 'ElevenSports1', 'ElevenSports2', 'Eurosport1', 'Eurosport2']
+            rest.sort(key=lambda c: (priority.index(c['xmltvId'].partition('.')[0]) if c['xmltvId'].partition('.')[0] in priority else 999,
+                not bool(re.match(r'TVP|TVN|Polsat|CanalPlus|ElevenSports|Eurosport|AXN|HBO|Discovery|NationalGeographic|Nickelodeon|CartoonNetwork', c['xmltvId'])), c['name']))
+        elif country == 'TR':
+            priority = ['TRT1', 'KanalD', 'ATV', 'ShowTV', 'StarTV', 'NOW', 'TV8', 'TRTSpor', 'SSport', 'SSport2', 'A2', 'TRTHaber', 'CNNturk']
+            rest.sort(key=lambda c: (priority.index(c['xmltvId'].partition('.')[0]) if c['xmltvId'].partition('.')[0] in priority else 999,
+                not ('.tr@' in c['xmltvId']), c['name']))
 
 
         seen = {}
@@ -231,7 +255,7 @@ def assemble(groups, seed, previous=(), limits=LIMITS):
                 c.update(id=old['id'], name=old['name'], feed=old['feed'], aliases=list(dict.fromkeys(old['aliases'] + c['aliases'])))
             else:
                 identity = c.get('xmltvId') or c['name']
-                c['id'] = country.lower() + '.' + slug(identity)
+                c['id'] = country.lower() + '.' + (slug(identity) or 'channel-' + hashlib.sha256(c['sourceId'].encode()).hexdigest()[:8])
                 if c['id'] in used_ids:
                     c['id'] += '.' + hashlib.sha256(c['sourceId'].encode()).hexdigest()[:8]
             if c['id'] in used_ids:
@@ -245,6 +269,15 @@ def assemble(groups, seed, previous=(), limits=LIMITS):
                 aliases += ['Hollywood']
             if country == 'PT' and c['sourceId'] == '2854':
                 aliases += ['TV Record']
+            if country == 'CH':
+                aliases += {'RTS1': ['RTS Un', 'RTS Une', 'RTS 1 Suisse'], 'RTS2': ['RTS Deux', 'RTS 2 Suisse']}.get(c['xmltvId'].partition('.')[0], [])
+            if country == 'FR' and c['id'] in ('fr.canal-plus', 'fr.canal-plus-foot', 'fr.canalplus-box-office'):
+
+                aliases += [c['name'] + suffix for suffix in (' UHD', ' UHD HDR', ' 4K', ' 4K HDR', ' 4K UHD', ' 4K HDR UHD')]
+            if country == 'FR' and c['id'] == 'fr.canal-plus':
+                aliases += ['CANAL+ 4K HDR UHD (Résolution Exclusive)']
+            if country == 'PL' and c.get('xmltvId', '').startswith('CanalPlus4KUltraHD.'):
+                aliases += ['CANAL+ 4K HDR UHD (EXCLUS)']
             c['aliases'] = list(dict.fromkeys(c['aliases'] + aliases))
             output.append(c)
     return output, stats

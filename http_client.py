@@ -15,12 +15,14 @@ HOSTS = {'api.oqee.net', 'awk.epgsky.com', 'apid.sky.it', 'ottcache.dof6.com',
          'meogouser.apps.meo.pt', 'www.tvpassport.com', 'mi.tv', 'www.raiplay.it',
          'api.prod.sngtv.magentatv.de', 'cdn.pt.vtv.vodafone.com'}
 HOSTS.add('raw.githubusercontent.com')
+HOSTS.update(('api2.shahid.net', 'programtv.onet.pl', 'www.rts.ch', 'izmaottvsc14.tvplus.com.tr'))
 MAX_BYTES = 12 * 1024 * 1024
 
 
 def validate_url(url):
     u = urlsplit(url)
-    if u.scheme != 'https' or u.hostname not in HOSTS or u.username or u.password or u.port not in (443, None):
+    ports = (None, 443, 33207) if u.hostname == 'izmaottvsc14.tvplus.com.tr' else (None, 443)
+    if u.scheme != 'https' or u.hostname not in HOSTS or u.username or u.password or u.port not in ports:
         raise ValueError('metadata_host_not_allowed')
 
 

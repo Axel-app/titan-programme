@@ -21,7 +21,7 @@ jobs:
   publish:
     if: github.event_name == 'workflow_dispatch' || vars.PROGRAMME_SCHEDULE_ENABLED == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     env:
       WRANGLER_SEND_METRICS: 'false'
     steps:

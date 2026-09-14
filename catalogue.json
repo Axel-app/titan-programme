@@ -70,7 +70,13 @@
     "aliases": [
       "CANAL+ BOX OFFICE FHD",
       "CANAL+ BOX OFFICE FHD+",
-      "CANAL+Box Office"
+      "CANAL+Box Office",
+      "CANAL+ Box Office UHD",
+      "CANAL+ Box Office UHD HDR",
+      "CANAL+ Box Office 4K",
+      "CANAL+ Box Office 4K HDR",
+      "CANAL+ Box Office 4K UHD",
+      "CANAL+ Box Office 4K HDR UHD"
     ],
     "id": "fr.canalplus-box-office",
     "identityStatus": "pilot-verified"
@@ -740,7 +746,15 @@
     "xmltvId": "",
     "feed": "CANAL+",
     "timezone": "Europe/Paris",
-    "aliases": [],
+    "aliases": [
+      "CANAL+ UHD",
+      "CANAL+ UHD HDR",
+      "CANAL+ 4K",
+      "CANAL+ 4K HDR",
+      "CANAL+ 4K UHD",
+      "CANAL+ 4K HDR UHD",
+      "CANAL+ 4K HDR UHD (Résolution Exclusive)"
+    ],
     "id": "fr.canal-plus",
     "identityStatus": "source-listed"
   },
@@ -764,7 +778,14 @@
     "xmltvId": "",
     "feed": "CANAL+Foot",
     "timezone": "Europe/Paris",
-    "aliases": [],
+    "aliases": [
+      "CANAL+Foot UHD",
+      "CANAL+Foot UHD HDR",
+      "CANAL+Foot 4K",
+      "CANAL+Foot 4K HDR",
+      "CANAL+Foot 4K UHD",
+      "CANAL+Foot 4K HDR UHD"
+    ],
     "id": "fr.canal-plus-foot",
     "identityStatus": "source-listed"
   },
@@ -6638,6 +6659,568 @@
     "identityStatus": "source-listed"
   },
   {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3214",
+    "name": "Islam Channel",
+    "xmltvId": "IslamChannel.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "IslamChannel"
+    ],
+    "id": "gb.islamchannel-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "5211",
+    "name": "Islam Ch Urdu",
+    "xmltvId": "IslamChannelUrdu.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "IslamChannelUrdu"
+    ],
+    "id": "gb.islamchannelurdu-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "4403",
+    "name": "Islam TV",
+    "xmltvId": "IslamTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "IslamTV"
+    ],
+    "id": "gb.islamtv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3354",
+    "name": "JewelleryMaker",
+    "xmltvId": "JewelleryMaker.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "JewelleryMaker"
+    ],
+    "id": "gb.jewellerymaker-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3753",
+    "name": "Kanshi TV",
+    "xmltvId": "KanshiTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "KanshiTV"
+    ],
+    "id": "gb.kanshitv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3845",
+    "name": "LFCTV HD",
+    "xmltvId": "LFCTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "LFCTV"
+    ],
+    "id": "gb.lfctv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "4610",
+    "name": "LEGEND",
+    "xmltvId": "Legend.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "Legend"
+    ],
+    "id": "gb.legend-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3401",
+    "name": "APNA MA TV",
+    "xmltvId": "MATVChannel.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "MATVChannel"
+    ],
+    "id": "gb.matvchannel-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3202",
+    "name": "MTA1 World HD",
+    "xmltvId": "MTA1World.uk@HD",
+    "feed": "HD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "MTA1World"
+    ],
+    "id": "gb.mta1world-uk-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "2501",
+    "name": "MTV",
+    "xmltvId": "MTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "MTV",
+      "MTV HD"
+    ],
+    "id": "gb.mtv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1003",
+    "name": "MUTV HD",
+    "xmltvId": "MUTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "MUTV"
+    ],
+    "id": "gb.mutv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "4420",
+    "name": "Movies24",
+    "xmltvId": "Movies24.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "Movies24"
+    ],
+    "id": "gb.movies24-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "4421",
+    "name": "Movies24+",
+    "xmltvId": "Movies24Plus.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "Movies24Plus"
+    ],
+    "id": "gb.movies24plus-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1089",
+    "name": "MstHveIdeasHD",
+    "xmltvId": "MustHaveIdeas.uk@HD",
+    "feed": "HD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "MustHaveIdeas"
+    ],
+    "id": "gb.musthaveideas-uk-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3682",
+    "name": "NOW ROCK",
+    "xmltvId": "NOWRock.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "NOWRock"
+    ],
+    "id": "gb.nowrock-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1026",
+    "name": "New Vision TV",
+    "xmltvId": "NewVision.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "NewVision"
+    ],
+    "id": "gb.newvision-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "4340",
+    "name": "NickJrPeppa",
+    "xmltvId": "NickJrToo.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "NickJrToo"
+    ],
+    "id": "gb.nickjrtoo-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3715",
+    "name": "Noor TV",
+    "xmltvId": "NoorTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "NoorTV"
+    ],
+    "id": "gb.noortv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3403",
+    "name": "NOW 70s",
+    "xmltvId": "Now70s.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "Now70s"
+    ],
+    "id": "gb.now70s-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "4541",
+    "name": "NOW 80s",
+    "xmltvId": "Now80s.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "Now80s"
+    ],
+    "id": "gb.now80s-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1103",
+    "name": "NOW 90s & 00s",
+    "xmltvId": "Now90s00s.uk@Poland",
+    "feed": "Poland",
+    "timezone": "Europe/London",
+    "aliases": [
+      "Now90s00s Poland"
+    ],
+    "id": "gb.now90s00s-uk-poland",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1011",
+    "name": "PBC",
+    "xmltvId": "PBC.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "PBC"
+    ],
+    "id": "gb.pbc-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "5500",
+    "name": "PBS America",
+    "xmltvId": "PBSAmerica.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "PBSAmerica"
+    ],
+    "id": "gb.pbsamerica-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1041",
+    "name": "Panjab TV",
+    "xmltvId": "PanjabTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "PanjabTV"
+    ],
+    "id": "gb.panjabtv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3421",
+    "name": "PoliticsPunjab",
+    "xmltvId": "PoliticsPunjab.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "PoliticsPunjab"
+    ],
+    "id": "gb.politicspunjab-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1076",
+    "name": "QVC HD",
+    "xmltvId": "QVC.uk@HD",
+    "feed": "HD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "QVC"
+    ],
+    "id": "gb.qvc-uk-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "4105",
+    "name": "QVC Beauty",
+    "xmltvId": "QVCBeauty.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "QVCBeauty"
+    ],
+    "id": "gb.qvcbeauty-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3359",
+    "name": "QVC Extra",
+    "xmltvId": "QVCExtra.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "QVCExtra"
+    ],
+    "id": "gb.qvcextra-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1118",
+    "name": "QVC Style HD",
+    "xmltvId": "QVCStyle.uk@HD",
+    "feed": "HD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "QVCStyle"
+    ],
+    "id": "gb.qvcstyle-uk-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "5272",
+    "name": "Racing TV HD",
+    "xmltvId": "RacingTV.uk@HD",
+    "feed": "HD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "RacingTV"
+    ],
+    "id": "gb.racingtv-uk-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3116",
+    "name": "revelation",
+    "xmltvId": "RevelationTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "RevelationTV"
+    ],
+    "id": "gb.revelationtv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1030",
+    "name": "Rewind TV",
+    "xmltvId": "RewindTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "RewindTV"
+    ],
+    "id": "gb.rewindtv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3355",
+    "name": "Sangat",
+    "xmltvId": "SangatTV.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "SangatTV"
+    ],
+    "id": "gb.sangattv-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3650",
+    "name": "Sikh Channel",
+    "xmltvId": "SikhChannel.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "SikhChannel"
+    ],
+    "id": "gb.sikhchannel-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1879",
+    "name": "Sky History2",
+    "xmltvId": "SkyHistory2.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "SkyHistory2"
+    ],
+    "id": "gb.skyhistory2-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1831",
+    "name": "Sky Mix HD",
+    "xmltvId": "SkyMix.uk@HD",
+    "feed": "HD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "SkyMix"
+    ],
+    "id": "gb.skymix-uk-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "1035",
+    "name": "SkySpBoxOffHD",
+    "xmltvId": "SkySportsBoxOffice.uk@HD",
+    "feed": "HD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "SkySportsBoxOffice"
+    ],
+    "id": "gb.skysportsboxoffice-uk-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3839",
+    "name": "SkySp+",
+    "xmltvId": "SkySportsPlus.uk@HD",
+    "feed": "HD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "SkySportsPlus"
+    ],
+    "id": "gb.skysportsplus-uk-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "2603",
+    "name": "SONY MAX",
+    "xmltvId": "SonyMax.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "SonyMax",
+      "SONY MAX HD"
+    ],
+    "id": "gb.sonymax-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "GB",
+    "source": "sky",
+    "sourceId": "3109",
+    "name": "TBN UK",
+    "xmltvId": "TBNUK.uk@SD",
+    "feed": "SD",
+    "timezone": "Europe/London",
+    "aliases": [
+      "TBNUK"
+    ],
+    "id": "gb.tbnuk-uk-sd",
+    "identityStatus": "source-listed"
+  },
+  {
     "country": "DE",
     "source": "magenta",
     "sourceId": "373",
@@ -8322,6 +8905,726 @@
     "timezone": "Europe/Berlin",
     "aliases": [],
     "id": "de.curiosity-channel",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "108",
+    "name": "auto motor und sport",
+    "xmltvId": "",
+    "feed": "auto motor und sport",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.auto-motor-und-sport",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "18",
+    "name": "Eurosport 2",
+    "xmltvId": "",
+    "feed": "Eurosport 2",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.eurosport-2",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "604",
+    "name": "Motorvision+",
+    "xmltvId": "",
+    "feed": "Motorvision+",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.motorvision-plus",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "191",
+    "name": "eSportsONE",
+    "xmltvId": "",
+    "feed": "eSportsONE",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.esportsone",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "112",
+    "name": "Blue Hustler",
+    "xmltvId": "",
+    "feed": "Blue Hustler",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.blue-hustler",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "32",
+    "name": "Lust pur",
+    "xmltvId": "",
+    "feed": "Lust pur",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.lust-pur",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "228",
+    "name": "Penthouse Passion",
+    "xmltvId": "",
+    "feed": "Penthouse Passion",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.penthouse-passion",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "34",
+    "name": "Playboy Europe",
+    "xmltvId": "",
+    "feed": "Playboy Europe",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.playboy-europe",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "218",
+    "name": "Jukebox",
+    "xmltvId": "",
+    "feed": "Jukebox",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.jukebox",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "5075",
+    "name": "MagentaSport",
+    "xmltvId": "",
+    "feed": "MagentaSport",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.magentasport",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "550",
+    "name": "Sport 1 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 1 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-1-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "548",
+    "name": "Sport 2 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 2 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-2-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "549",
+    "name": "Sport 3 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 3 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-3-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "648",
+    "name": "Sport 4 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 4 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-4-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "645",
+    "name": "Sport 5 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 5 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-5-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "647",
+    "name": "Sport 6 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 6 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-6-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "646",
+    "name": "Sport 7 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 7 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-7-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "623",
+    "name": "Sport 8 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 8 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-8-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "626",
+    "name": "Sport 9 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 9 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-9-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "624",
+    "name": "Sport 10 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 10 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-10-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "625",
+    "name": "Sport 11 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 11 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-11-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "627",
+    "name": "Sport 12 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 12 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-12-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "629",
+    "name": "Sport 13 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 13 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-13-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "628",
+    "name": "Sport 14 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 14 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-14-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "367",
+    "name": "Sport 15 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 15 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-15-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "366",
+    "name": "Sport 16 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 16 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-16-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "369",
+    "name": "Sport 17 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 17 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-17-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "3686",
+    "name": "Sport 18 - myTeamTV",
+    "xmltvId": "",
+    "feed": "Sport 18 - myTeamTV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sport-18-myteamtv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "194",
+    "name": "SPORTDIGITAL FUSSBALL",
+    "xmltvId": "",
+    "feed": "SPORTDIGITAL FUSSBALL",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sportdigital-fussball",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "44",
+    "name": "Sportdigital1+",
+    "xmltvId": "",
+    "feed": "Sportdigital1+",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sportdigital1-plus",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "637",
+    "name": "Sky Sport Kompakt 1",
+    "xmltvId": "",
+    "feed": "Sky Sport Kompakt 1",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.sky-sport-kompakt-1",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "483",
+    "name": "TeleBom/TeleDom",
+    "xmltvId": "",
+    "feed": "TeleBom/TeleDom",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.telebom-teledom",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "475",
+    "name": "Euronews Russki",
+    "xmltvId": "",
+    "feed": "Euronews Russki",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.euronews-russki",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "472",
+    "name": "Kinomir",
+    "xmltvId": "",
+    "feed": "Kinomir",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.kinomir",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "476",
+    "name": "OstWest",
+    "xmltvId": "",
+    "feed": "OstWest",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.ostwest",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "474",
+    "name": "iTVN",
+    "xmltvId": "",
+    "feed": "iTVN",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.itvn",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "473",
+    "name": "TVP Polonia",
+    "xmltvId": "",
+    "feed": "TVP Polonia",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.tvp-polonia",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "6499",
+    "name": "HT SPOR",
+    "xmltvId": "",
+    "feed": "HT SPOR",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.ht-spor",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "136",
+    "name": "Euro D",
+    "xmltvId": "",
+    "feed": "Euro D",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.euro-d",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "21",
+    "name": "Eurostar TV",
+    "xmltvId": "",
+    "feed": "Eurostar TV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.eurostar-tv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "29",
+    "name": "Kanal 7",
+    "xmltvId": "",
+    "feed": "Kanal 7",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.kanal-7",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "3826",
+    "name": "beIN iZ",
+    "xmltvId": "",
+    "feed": "beIN iZ",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.bein-iz",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "440",
+    "name": "beIN Movies Turk",
+    "xmltvId": "",
+    "feed": "beIN Movies Turk",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.bein-movies-turk",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "4378",
+    "name": "Habertürk TV",
+    "xmltvId": "",
+    "feed": "Habertürk TV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.haberturk-tv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "215",
+    "name": "Show Turk",
+    "xmltvId": "",
+    "feed": "Show Turk",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.show-turk",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "3827",
+    "name": "Show Max",
+    "xmltvId": "",
+    "feed": "Show Max",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.show-max",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "439",
+    "name": "TV8 Int",
+    "xmltvId": "",
+    "feed": "TV8 Int",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.tv8-int",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "236",
+    "name": "ÜLKE TV",
+    "xmltvId": "",
+    "feed": "ÜLKE TV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.ulke-tv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "121",
+    "name": "Euronews Italiano",
+    "xmltvId": "",
+    "feed": "Euronews Italiano",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.euronews-italiano",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "43",
+    "name": "Rai 1",
+    "xmltvId": "",
+    "feed": "Rai 1",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.rai-1",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "46",
+    "name": "Rai 2",
+    "xmltvId": "",
+    "feed": "Rai 2",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.rai-2",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "210",
+    "name": "Rai 3",
+    "xmltvId": "",
+    "feed": "Rai 3",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.rai-3",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "3685",
+    "name": "Baden TV",
+    "xmltvId": "",
+    "feed": "Baden TV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.baden-tv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "3749",
+    "name": "Baden TV Süd",
+    "xmltvId": "",
+    "feed": "Baden TV Süd",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.baden-tv-sud",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "578",
+    "name": "L-TV",
+    "xmltvId": "",
+    "feed": "L-TV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.l-tv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "660",
+    "name": "Regio TV",
+    "xmltvId": "",
+    "feed": "Regio TV",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.regio-tv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "6048",
+    "name": "RTL Rhein-Neckar",
+    "xmltvId": "",
+    "feed": "RTL Rhein-Neckar",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.rtl-rhein-neckar",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "161",
+    "name": "a.tv",
+    "xmltvId": "",
+    "feed": "a.tv",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.a-tv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "448",
+    "name": "allgäu.tv",
+    "xmltvId": "",
+    "feed": "allgäu.tv",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.allgau-tv",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "DE",
+    "source": "magenta",
+    "sourceId": "175",
+    "name": "BR Fernsehen Nord",
+    "xmltvId": "",
+    "feed": "BR Fernsehen Nord",
+    "timezone": "Europe/Berlin",
+    "aliases": [],
+    "id": "de.br-fernsehen-nord",
     "identityStatus": "source-listed"
   },
   {
@@ -11173,6 +12476,366 @@
     "identityStatus": "source-listed"
   },
   {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "ENW",
+    "name": "Euronews",
+    "xmltvId": "",
+    "feed": "Euronews",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.euronews",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "FRANCE",
+    "name": "FRANCE24 (FR)",
+    "xmltvId": "",
+    "feed": "FRANCE24 (FR)",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.france24-fr",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "GOL",
+    "name": "GOL",
+    "xmltvId": "",
+    "feed": "GOL",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.gol",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MAXAVA",
+    "name": "HBO Max Avances",
+    "xmltvId": "",
+    "feed": "HBO Max Avances",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.hbo-max-avances",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MLIGS",
+    "name": "LALIGA TV HYPERMOTION",
+    "xmltvId": "",
+    "feed": "LALIGA TV HYPERMOTION",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.laliga-tv-hypermotion",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MLIGS2",
+    "name": "LALIGA TV HYPERMOTION 2",
+    "xmltvId": "",
+    "feed": "LALIGA TV HYPERMOTION 2",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.laliga-tv-hypermotion-2",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MLIGS3",
+    "name": "LALIGA TV HYPERMOTION 3",
+    "xmltvId": "",
+    "feed": "LALIGA TV HYPERMOTION 3",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.laliga-tv-hypermotion-3",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MCIBE",
+    "name": "M+ Cine bélico",
+    "xmltvId": "",
+    "feed": "M+ Cine bélico",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-cine-belico",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "ARTHUR",
+    "name": "M+ Deportes 2",
+    "xmltvId": "",
+    "feed": "M+ Deportes 2",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-deportes-2",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "USOP2",
+    "name": "M+ Deportes 3",
+    "xmltvId": "",
+    "feed": "M+ Deportes 3",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-deportes-3",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "USOP3",
+    "name": "M+ Deportes 4",
+    "xmltvId": "",
+    "feed": "M+ Deportes 4",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-deportes-4",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "USOP11",
+    "name": "M+ Deportes 5",
+    "xmltvId": "",
+    "feed": "M+ Deportes 5",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-deportes-5",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MULTI8",
+    "name": "M+ Deportes 6",
+    "xmltvId": "",
+    "feed": "M+ Deportes 6",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-deportes-6",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MULTI6",
+    "name": "M+ Deportes 7",
+    "xmltvId": "",
+    "feed": "M+ Deportes 7",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-deportes-7",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MULTI9",
+    "name": "M+ Deportes 8",
+    "xmltvId": "",
+    "feed": "M+ Deportes 8",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-deportes-8",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MELLAV",
+    "name": "M+ Ellas V",
+    "xmltvId": "",
+    "feed": "M+ Ellas V",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-ellas-v",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "GOLF2",
+    "name": "M+ Golf 2",
+    "xmltvId": "",
+    "feed": "M+ Golf 2",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-golf-2",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MHITS",
+    "name": "M+ Hits",
+    "xmltvId": "",
+    "feed": "M+ Hits",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-hits",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MLIG1",
+    "name": "M+ LALIGA 2",
+    "xmltvId": "",
+    "feed": "M+ LALIGA 2",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-laliga-2",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MLIG2",
+    "name": "M+ LALIGA 3",
+    "xmltvId": "",
+    "feed": "M+ LALIGA 3",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-laliga-3",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "MLIG3",
+    "name": "M+ LALIGA 4",
+    "xmltvId": "",
+    "feed": "M+ LALIGA 4",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-laliga-4",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP9",
+    "name": "M+ Liga de Campeones 10",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 10",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-10",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP10",
+    "name": "M+ Liga de Campeones 11",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 11",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-11",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP11",
+    "name": "M+ Liga de Campeones 12",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 12",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-12",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP12",
+    "name": "M+ Liga de Campeones 13",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 13",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-13",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP1",
+    "name": "M+ Liga de Campeones 2",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 2",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-2",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP2",
+    "name": "M+ Liga de Campeones 3",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 3",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-3",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP3",
+    "name": "M+ Liga de Campeones 4",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 4",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-4",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP4",
+    "name": "M+ Liga de Campeones 5",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 5",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-5",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "ES",
+    "source": "movistar",
+    "sourceId": "CHAP5",
+    "name": "M+ Liga de Campeones 6",
+    "xmltvId": "",
+    "feed": "M+ Liga de Campeones 6",
+    "timezone": "Europe/Madrid",
+    "aliases": [],
+    "id": "es.m-plus-liga-de-campeones-6",
+    "identityStatus": "source-listed"
+  },
+  {
     "country": "PT",
     "source": "vodafone",
     "sourceId": "3028",
@@ -12856,6 +14519,76 @@
       "TraceUrban"
     ],
     "id": "pt.traceurban-pt-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PT",
+    "source": "vodafone",
+    "sourceId": "2993",
+    "name": "Travel Channel",
+    "xmltvId": "TravelChannel.pt@HD",
+    "feed": "HD",
+    "timezone": "Europe/Lisbon",
+    "aliases": [
+      "TravelChannel"
+    ],
+    "id": "pt.travelchannel-pt-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PT",
+    "source": "vodafone",
+    "sourceId": "8368",
+    "name": "UNIFÉ TV",
+    "xmltvId": "UNIFETV.pt@HD",
+    "feed": "HD",
+    "timezone": "Europe/Lisbon",
+    "aliases": [
+      "UNIFETV"
+    ],
+    "id": "pt.unifetv-pt-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PT",
+    "source": "vodafone",
+    "sourceId": "8399",
+    "name": "V+ TVI",
+    "xmltvId": "VTVI.pt@HD",
+    "feed": "HD",
+    "timezone": "Europe/Lisbon",
+    "aliases": [
+      "VTVI"
+    ],
+    "id": "pt.vtvi-pt-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PT",
+    "source": "vodafone",
+    "sourceId": "8636",
+    "name": "VinTV",
+    "xmltvId": "VinTV.pt@HD",
+    "feed": "HD",
+    "timezone": "Europe/Lisbon",
+    "aliases": [
+      "VinTV"
+    ],
+    "id": "pt.vintv-pt-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PT",
+    "source": "vodafone",
+    "sourceId": "8901",
+    "name": "W-Sport",
+    "xmltvId": "WSport.pt@HD",
+    "feed": "HD",
+    "timezone": "Europe/Lisbon",
+    "aliases": [
+      "WSport"
+    ],
+    "id": "pt.wsport-pt-hd",
     "identityStatus": "source-listed"
   },
   {
@@ -18128,6 +19861,3435 @@
       "Canal5"
     ],
     "id": "mx.canal5-mx-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "144",
+    "name": "TRT1",
+    "xmltvId": "TRT1.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRT1"
+    ],
+    "id": "tr.trt1-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "88",
+    "name": "KANAL D",
+    "xmltvId": "KanalD.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "KanalD"
+    ],
+    "id": "tr.kanald-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "124",
+    "name": "ATV",
+    "xmltvId": "ATV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "ATV"
+    ],
+    "id": "tr.atv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "130",
+    "name": "SHOW TV",
+    "xmltvId": "ShowTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "ShowTV"
+    ],
+    "id": "tr.showtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "89",
+    "name": "STAR TV",
+    "xmltvId": "StarTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "StarTV"
+    ],
+    "id": "tr.startv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "134",
+    "name": "TV8",
+    "xmltvId": "TV8.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TV8"
+    ],
+    "id": "tr.tv8-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "31",
+    "name": "TRT SPOR",
+    "xmltvId": "TRTSpor.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTSpor"
+    ],
+    "id": "tr.trtspor-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "11",
+    "name": "S SPORT",
+    "xmltvId": "SSport.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SSport"
+    ],
+    "id": "tr.ssport-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "170",
+    "name": "S SPORT 2",
+    "xmltvId": "SSport2.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SSport2"
+    ],
+    "id": "tr.ssport2-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "30",
+    "name": "TRT HABER",
+    "xmltvId": "TRTHaber.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTHaber"
+    ],
+    "id": "tr.trthaber-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "32",
+    "name": "24",
+    "xmltvId": "24TV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "24TV"
+    ],
+    "id": "tr.24tv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "86",
+    "name": "360",
+    "xmltvId": "360.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "360"
+    ],
+    "id": "tr.360-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "160",
+    "name": "A HABER",
+    "xmltvId": "AHaber.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "AHaber"
+    ],
+    "id": "tr.ahaber-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "101",
+    "name": "A NEWS",
+    "xmltvId": "ANews.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "ANews"
+    ],
+    "id": "tr.anews-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "79",
+    "name": "A PARA",
+    "xmltvId": "APara.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "APara"
+    ],
+    "id": "tr.apara-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "3",
+    "name": "A SPOR",
+    "xmltvId": "ASpor.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "ASpor"
+    ],
+    "id": "tr.aspor-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "2",
+    "name": "A2",
+    "xmltvId": "A2TV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "A2TV"
+    ],
+    "id": "tr.a2tv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "13",
+    "name": "AKİT TV",
+    "xmltvId": "AkitTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "AkitTV"
+    ],
+    "id": "tr.akittv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4466",
+    "name": "AS TV",
+    "xmltvId": "ASTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "ASTV"
+    ],
+    "id": "tr.astv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "47",
+    "name": "BENGÜTÜRK",
+    "xmltvId": "BenguturkTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "BenguturkTV"
+    ],
+    "id": "tr.benguturktv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "135",
+    "name": "BEYAZ TV",
+    "xmltvId": "BeyazTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "BeyazTV"
+    ],
+    "id": "tr.beyaztv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "96",
+    "name": "BLOOMBERG HT",
+    "xmltvId": "BloombergHT.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "BloombergHT"
+    ],
+    "id": "tr.bloomberght-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4300",
+    "name": "BluTV Play 1",
+    "xmltvId": "BluTVPlay1.tr@HD",
+    "feed": "HD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "BluTVPlay1"
+    ],
+    "id": "tr.blutvplay1-tr-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4302",
+    "name": "BluTV Play 2",
+    "xmltvId": "BluTVPlay2.tr@HD",
+    "feed": "HD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "BluTVPlay2"
+    ],
+    "id": "tr.blutvplay2-tr-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "118",
+    "name": "BİZİM EV TV",
+    "xmltvId": "BizimevTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "BizimevTV"
+    ],
+    "id": "tr.bizimevtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "20",
+    "name": "CARTOON NETWORK",
+    "xmltvId": "CartoonNetwork.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "CartoonNetwork"
+    ],
+    "id": "tr.cartoonnetwork-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "158",
+    "name": "CNN TÜRK",
+    "xmltvId": "CNNTurk.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "CNNTurk"
+    ],
+    "id": "tr.cnnturk-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "8",
+    "name": "DISCOVERY CHANNEL",
+    "xmltvId": "DiscoveryChannel.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "DiscoveryChannel"
+    ],
+    "id": "tr.discoverychannel-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "149",
+    "name": "DISNEY JUNIOR",
+    "xmltvId": "DisneyJr.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "DisneyJr"
+    ],
+    "id": "tr.disneyjr-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "180",
+    "name": "DMAX",
+    "xmltvId": "DMAX.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "DMAX"
+    ],
+    "id": "tr.dmax-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "153",
+    "name": "DREAM TÜRK",
+    "xmltvId": "DreamTurk.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "DreamTurk"
+    ],
+    "id": "tr.dreamturk-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "175",
+    "name": "DİYANET TV",
+    "xmltvId": "DiyanetTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "DiyanetTV"
+    ],
+    "id": "tr.diyanettv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "100",
+    "name": "EKOTÜRK",
+    "xmltvId": "Ekoturk.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Ekoturk"
+    ],
+    "id": "tr.ekoturk-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "148",
+    "name": "FB TV",
+    "xmltvId": "FBTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "FBTV"
+    ],
+    "id": "tr.fbtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "2979",
+    "name": "FLASH HABER",
+    "xmltvId": "FlashHaberTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "FlashHaberTV"
+    ],
+    "id": "tr.flashhabertv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "163",
+    "name": "FM TV",
+    "xmltvId": "FMTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "FMTV"
+    ],
+    "id": "tr.fmtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "131",
+    "name": "FX",
+    "xmltvId": "FX.tr@HD",
+    "feed": "HD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "FX"
+    ],
+    "id": "tr.fx-tr-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4461",
+    "name": "GZT TV",
+    "xmltvId": "GZT.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "GZT"
+    ],
+    "id": "tr.gzt-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "5",
+    "name": "HABER GLOBAL",
+    "xmltvId": "HaberGlobal.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "HaberGlobal"
+    ],
+    "id": "tr.haberglobal-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "87",
+    "name": "HABERTÜRK",
+    "xmltvId": "HaberturkTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "HaberturkTV"
+    ],
+    "id": "tr.haberturktv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "91",
+    "name": "HALK TV",
+    "xmltvId": "HalkTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "HalkTV"
+    ],
+    "id": "tr.halktv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4396",
+    "name": "HT SPOR",
+    "xmltvId": "HTSporTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "HTSporTV"
+    ],
+    "id": "tr.htsportv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "110",
+    "name": "KADIRGA TV",
+    "xmltvId": "KadirgaTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "KadirgaTV"
+    ],
+    "id": "tr.kadirgatv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "2359",
+    "name": "KANAL 23",
+    "xmltvId": "Kanal23.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Kanal23"
+    ],
+    "id": "tr.kanal23-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "143",
+    "name": "KANAL 26",
+    "xmltvId": "Kanal26.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Kanal26"
+    ],
+    "id": "tr.kanal26-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "146",
+    "name": "KANAL 33",
+    "xmltvId": "Kanal33.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Kanal33"
+    ],
+    "id": "tr.kanal33-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "90",
+    "name": "KANAL 7",
+    "xmltvId": "Kanal7.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Kanal7"
+    ],
+    "id": "tr.kanal7-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "114",
+    "name": "KANAL V",
+    "xmltvId": "KanalV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "KanalV"
+    ],
+    "id": "tr.kanalv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "63",
+    "name": "KONTV",
+    "xmltvId": "KonTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "KonTV"
+    ],
+    "id": "tr.kontv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "111",
+    "name": "KRT TV",
+    "xmltvId": "KRT.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "KRT"
+    ],
+    "id": "tr.krt-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "138",
+    "name": "MELTEM TV",
+    "xmltvId": "MeltemTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "MeltemTV"
+    ],
+    "id": "tr.meltemtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "7",
+    "name": "MİNİKA GO",
+    "xmltvId": "MinikaGo.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "MinikaGo"
+    ],
+    "id": "tr.minikago-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "102",
+    "name": "MİNİKA ÇOCUK",
+    "xmltvId": "MinikaCocuk.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "MinikaCocuk"
+    ],
+    "id": "tr.minikacocuk-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "2799",
+    "name": "NATIONAL GEOGRAPHIC",
+    "xmltvId": "NationalGeographic.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "NationalGeographic"
+    ],
+    "id": "tr.nationalgeographic-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "139",
+    "name": "NATIONAL GEOGRAPHIC WILD",
+    "xmltvId": "NationalGeographicWild.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "NationalGeographicWild"
+    ],
+    "id": "tr.nationalgeographicwild-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4487",
+    "name": "NICKELODEON",
+    "xmltvId": "Nickelodeon.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Nickelodeon"
+    ],
+    "id": "tr.nickelodeon-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "2739",
+    "name": "NICKTOONS",
+    "xmltvId": "Nicktoons.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Nicktoons"
+    ],
+    "id": "tr.nicktoons-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "93",
+    "name": "NOW",
+    "xmltvId": "NOWTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "NOWTV"
+    ],
+    "id": "tr.nowtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "41",
+    "name": "NR1 DAMAR",
+    "xmltvId": "Number1Damar.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Number1Damar"
+    ],
+    "id": "tr.number1damar-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "81",
+    "name": "NTV",
+    "xmltvId": "NTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "NTV"
+    ],
+    "id": "tr.ntv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "98",
+    "name": "NUMBER1 TURK",
+    "xmltvId": "Number1Turk.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Number1Turk"
+    ],
+    "id": "tr.number1turk-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "204",
+    "name": "NUMBER1 TV",
+    "xmltvId": "Number1TV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Number1TV"
+    ],
+    "id": "tr.number1tv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4353",
+    "name": "Nick JR",
+    "xmltvId": "NickJr.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "NickJr"
+    ],
+    "id": "tr.nickjr-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "169",
+    "name": "ON6",
+    "xmltvId": "On6.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "On6"
+    ],
+    "id": "tr.on6-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "202",
+    "name": "POWER TURK",
+    "xmltvId": "PowerTurkTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "PowerTurkTV"
+    ],
+    "id": "tr.powerturktv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "172",
+    "name": "POWER TV",
+    "xmltvId": "PowerTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "PowerTV"
+    ],
+    "id": "tr.powertv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "97",
+    "name": "SEMERKAND",
+    "xmltvId": "SemerkandTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SemerkandTV"
+    ],
+    "id": "tr.semerkandtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4465",
+    "name": "SPACETOON",
+    "xmltvId": "SpacetoonTurkey.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SpacetoonTurkey"
+    ],
+    "id": "tr.spacetoonturkey-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "173",
+    "name": "SPORTS TV",
+    "xmltvId": "SportsTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SportsTV"
+    ],
+    "id": "tr.sportstv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4294",
+    "name": "SÖZCÜ TV",
+    "xmltvId": "SozcuTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SozcuTV"
+    ],
+    "id": "tr.sozcutv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "190",
+    "name": "SİNEMA 1002",
+    "xmltvId": "Sinema1002.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Sinema1002"
+    ],
+    "id": "tr.sinema1002-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "196",
+    "name": "SİNEMA AKSİYON 2",
+    "xmltvId": "SinemaAksiyon2.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SinemaAksiyon2"
+    ],
+    "id": "tr.sinemaaksiyon2-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "155",
+    "name": "SİNEMA AİLE",
+    "xmltvId": "SinemaAile.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SinemaAile"
+    ],
+    "id": "tr.sinemaaile-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "182",
+    "name": "SİNEMA AİLE 2",
+    "xmltvId": "SinemaAile2.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SinemaAile2"
+    ],
+    "id": "tr.sinemaaile2-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "154",
+    "name": "SİNEMA KOMEDİ",
+    "xmltvId": "SinemaKomedi.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SinemaKomedi"
+    ],
+    "id": "tr.sinemakomedi-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "166",
+    "name": "SİNEMA TV",
+    "xmltvId": "SinemaTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SinemaTV"
+    ],
+    "id": "tr.sinematv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "181",
+    "name": "SİNEMA TV 1001",
+    "xmltvId": "Sinema1001.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Sinema1001"
+    ],
+    "id": "tr.sinema1001-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "199",
+    "name": "SİNEMA TV 2",
+    "xmltvId": "Sinema2.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Sinema2"
+    ],
+    "id": "tr.sinema2-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "129",
+    "name": "SİNEMA TV AKSİYON",
+    "xmltvId": "SinemaAksiyon.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SinemaAksiyon"
+    ],
+    "id": "tr.sinemaaksiyon-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "12",
+    "name": "SİNEMA YERLİ",
+    "xmltvId": "SinemaYerli.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SinemaYerli"
+    ],
+    "id": "tr.sinemayerli-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "61",
+    "name": "SİNEMA YERLİ 2",
+    "xmltvId": "SinemaYerli2.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "SinemaYerli2"
+    ],
+    "id": "tr.sinemayerli2-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4253",
+    "name": "TARIH TV",
+    "xmltvId": "TarihTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TarihTV"
+    ],
+    "id": "tr.tarihtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "141",
+    "name": "TARIM TV",
+    "xmltvId": "TarimTV.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TarimTV"
+    ],
+    "id": "tr.tarimtv-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "189",
+    "name": "TELE1",
+    "xmltvId": "Tele1.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Tele1"
+    ],
+    "id": "tr.tele1-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "95",
+    "name": "TEVE2",
+    "xmltvId": "Teve2.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "Teve2"
+    ],
+    "id": "tr.teve2-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "34",
+    "name": "TGRT HABER",
+    "xmltvId": "TGRTHaber.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TGRTHaber"
+    ],
+    "id": "tr.tgrthaber-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "174",
+    "name": "TLC",
+    "xmltvId": "TLC.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TLC"
+    ],
+    "id": "tr.tlc-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "2280",
+    "name": "TMB TV",
+    "xmltvId": "TMB.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TMB"
+    ],
+    "id": "tr.tmb-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "83",
+    "name": "TRT 2",
+    "xmltvId": "TRT2.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRT2"
+    ],
+    "id": "tr.trt2-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "116",
+    "name": "TRT 3",
+    "xmltvId": "TRT3.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRT3"
+    ],
+    "id": "tr.trt3-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "76",
+    "name": "TRT ARABI",
+    "xmltvId": "TRTArabi.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTArabi"
+    ],
+    "id": "tr.trtarabi-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "193",
+    "name": "TRT AVAZ",
+    "xmltvId": "TRTAvaz.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTAvaz"
+    ],
+    "id": "tr.trtavaz-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "21",
+    "name": "TRT BELGESEL",
+    "xmltvId": "TRTBelgesel.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTBelgesel"
+    ],
+    "id": "tr.trtbelgesel-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "4319",
+    "name": "TRT DIYANET COCUK",
+    "xmltvId": "TRTDiyanetCocuk.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTDiyanetCocuk"
+    ],
+    "id": "tr.trtdiyanetcocuk-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "2300",
+    "name": "TRT EBA",
+    "xmltvId": "TRTEBA.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTEBA"
+    ],
+    "id": "tr.trteba-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "10",
+    "name": "TRT KURDİ",
+    "xmltvId": "TRTKurdi.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTKurdi"
+    ],
+    "id": "tr.trtkurdi-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "159",
+    "name": "TRT MÜZİK",
+    "xmltvId": "TRTMuzik.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTMuzik"
+    ],
+    "id": "tr.trtmuzik-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "205",
+    "name": "TRT SPOR YILDIZ",
+    "xmltvId": "TRTSporYildiz.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTSporYildiz"
+    ],
+    "id": "tr.trtsporyildiz-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "156",
+    "name": "TRT TÜRK",
+    "xmltvId": "TRTTurk.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTTurk"
+    ],
+    "id": "tr.trtturk-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "TR",
+    "source": "tvplus",
+    "sourceId": "38",
+    "name": "TRT World",
+    "xmltvId": "TRTWorld.tr@SD",
+    "feed": "SD",
+    "timezone": "Europe/Istanbul",
+    "aliases": [
+      "TRTWorld"
+    ],
+    "id": "tr.trtworld-tr-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-1-321",
+    "name": "TVP 1",
+    "xmltvId": "TVP1.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP1"
+    ],
+    "id": "pl.tvp1-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-2-323",
+    "name": "TVP 2",
+    "xmltvId": "TVP2.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP2"
+    ],
+    "id": "pl.tvp2-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvn-357",
+    "name": "TVN",
+    "xmltvId": "TVN.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVN"
+    ],
+    "id": "pl.tvn-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-38",
+    "name": "Polsat",
+    "xmltvId": "Polsat.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "Polsat"
+    ],
+    "id": "pl.polsat-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvn-7-326",
+    "name": "TVN 7",
+    "xmltvId": "TVN7.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVN7"
+    ],
+    "id": "pl.tvn7-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tv-4-360",
+    "name": "TV 4",
+    "xmltvId": "TV4.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TV4"
+    ],
+    "id": "pl.tv4-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-info-462",
+    "name": "TVP Info",
+    "xmltvId": "TVPInfo.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVPInfo"
+    ],
+    "id": "pl.tvpinfo-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-sport-40",
+    "name": "TVP Sport",
+    "xmltvId": "TVPSport.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVPSport"
+    ],
+    "id": "pl.tvpsport-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvn-24-347",
+    "name": "TVN 24",
+    "xmltvId": "TVN24.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVN24"
+    ],
+    "id": "pl.tvn24-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-news-100",
+    "name": "Polsat News",
+    "xmltvId": "PolsatNews.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatNews"
+    ],
+    "id": "pl.polsatnews-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-246",
+    "name": "CANAL+ PREMIUM",
+    "xmltvId": "CanalPlusPremium.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusPremium"
+    ],
+    "id": "pl.canalpluspremium-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-sport-14",
+    "name": "CANAL+ Sport",
+    "xmltvId": "CanalPlusSport.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusSport"
+    ],
+    "id": "pl.canalplussport-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-sport-2-15",
+    "name": "CANAL+ Sport 2",
+    "xmltvId": "CanalPlusSport2.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusSport2"
+    ],
+    "id": "pl.canalplussport2-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "eleven-208",
+    "name": "Eleven Sports 1",
+    "xmltvId": "ElevenSports1.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "ElevenSports1"
+    ],
+    "id": "pl.elevensports1-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "eleven-sports-212",
+    "name": "Eleven Sports 2",
+    "xmltvId": "ElevenSports2.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "ElevenSports2"
+    ],
+    "id": "pl.elevensports2-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "eurosport-1-93",
+    "name": "Eurosport 1",
+    "xmltvId": "Eurosport1.fr@Poland",
+    "feed": "Poland",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "Eurosport1 Poland"
+    ],
+    "id": "pl.eurosport1-fr-poland",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "eurosport-2-76",
+    "name": "Eurosport 2",
+    "xmltvId": "Eurosport2.fr@Poland",
+    "feed": "Poland",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "Eurosport2 Poland"
+    ],
+    "id": "pl.eurosport2-fr-poland",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "axn-black-271",
+    "name": "AXN Black",
+    "xmltvId": "AXNBlack.us@Bulgary",
+    "feed": "Bulgary",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "AXNBlack Bulgary"
+    ],
+    "id": "pl.axnblack-us-bulgary",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "axn-white-272",
+    "name": "AXN White",
+    "xmltvId": "AXNWhite.us@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "AXNWhite"
+    ],
+    "id": "pl.axnwhite-us-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-1-295",
+    "name": "CANAL+ 1",
+    "xmltvId": "CanalPlus1.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlus1"
+    ],
+    "id": "pl.canalplus1-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-4k-ultra-hd-638",
+    "name": "CANAL+ 4K Ultra HD",
+    "xmltvId": "CanalPlus4KUltraHD.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlus4KUltraHD",
+      "CANAL+ 4K HDR UHD (EXCLUS)"
+    ],
+    "id": "pl.canalplus4kultrahd-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-discovery-307",
+    "name": "CANAL+ DOKUMENT",
+    "xmltvId": "CanalPlusDokument.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusDokument"
+    ],
+    "id": "pl.canalplusdokument-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "domo-106",
+    "name": "CANAL+ DOMO",
+    "xmltvId": "CanalPlusDomo.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusDomo"
+    ],
+    "id": "pl.canalplusdomo-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-film-320",
+    "name": "CANAL+ Film",
+    "xmltvId": "CanalPlusFilm.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusFilm"
+    ],
+    "id": "pl.canalplusfilm-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "kuchnia-489",
+    "name": "CANAL+ KUCHNIA",
+    "xmltvId": "CanalPlusKuchnia.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusKuchnia"
+    ],
+    "id": "pl.canalpluskuchnia-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-seriale-293",
+    "name": "CANAL+ Seriale",
+    "xmltvId": "CanalPlusSeriale.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusSeriale"
+    ],
+    "id": "pl.canalplusseriale-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-sport-3-674",
+    "name": "CANAL+ Sport 3",
+    "xmltvId": "CanalPlusSport3.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusSport3"
+    ],
+    "id": "pl.canalplussport3-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "canal-sport-4-675",
+    "name": "CANAL+ Sport 4",
+    "xmltvId": "CanalPlusSport4.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CanalPlusSport4"
+    ],
+    "id": "pl.canalplussport4-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "cartoon-network-273",
+    "name": "Cartoon Network",
+    "xmltvId": "CartoonNetworkCEE.uk@Poland",
+    "feed": "Poland",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "CartoonNetworkCEE Poland"
+    ],
+    "id": "pl.cartoonnetworkcee-uk-poland",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "discovery-channel-202",
+    "name": "Discovery Channel",
+    "xmltvId": "DiscoveryChannel.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "DiscoveryChannel"
+    ],
+    "id": "pl.discoverychannel-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "discovery-historia-54",
+    "name": "Discovery Historia",
+    "xmltvId": "DiscoveryHistoria.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "DiscoveryHistoria"
+    ],
+    "id": "pl.discoveryhistoria-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "discovery-life-187",
+    "name": "Discovery Life",
+    "xmltvId": "DiscoveryLife.pl@HD",
+    "feed": "HD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "DiscoveryLife"
+    ],
+    "id": "pl.discoverylife-pl-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "discovery-science-53",
+    "name": "Discovery Science",
+    "xmltvId": "DiscoveryScienceEurope.uk@Poland",
+    "feed": "Poland",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "DiscoveryScienceEurope Poland"
+    ],
+    "id": "pl.discoveryscienceeurope-uk-poland",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "eleven-extra-531",
+    "name": "Eleven Sports 3",
+    "xmltvId": "ElevenSports3.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "ElevenSports3"
+    ],
+    "id": "pl.elevensports3-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "eleven-sports-4-607",
+    "name": "Eleven Sports 4",
+    "xmltvId": "ElevenSports4.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "ElevenSports4"
+    ],
+    "id": "pl.elevensports4-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "hbo-23",
+    "name": "HBO",
+    "xmltvId": "HBO.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "HBO"
+    ],
+    "id": "pl.hbo-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "hbo2-24",
+    "name": "HBO2",
+    "xmltvId": "HBO2.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "HBO2"
+    ],
+    "id": "pl.hbo2-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "hbo-3-25",
+    "name": "HBO3",
+    "xmltvId": "HBO3.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "HBO3",
+      "HBO3 HD"
+    ],
+    "id": "pl.hbo3-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "national-geographic-channel-32",
+    "name": "National Geographic",
+    "xmltvId": "NationalGeographic.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "NationalGeographic"
+    ],
+    "id": "pl.nationalgeographic-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "nat-geo-wild-77",
+    "name": "National Geographic Wild",
+    "xmltvId": "NationalGeographicWild.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "NationalGeographicWild"
+    ],
+    "id": "pl.nationalgeographicwild-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "nickelodeon-42",
+    "name": "Nickelodeon",
+    "xmltvId": "Nickelodeon.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "Nickelodeon"
+    ],
+    "id": "pl.nickelodeon-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-1-36",
+    "name": "Polsat 1",
+    "xmltvId": "Polsat1.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "Polsat1"
+    ],
+    "id": "pl.polsat1-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-2-327",
+    "name": "Polsat 2",
+    "xmltvId": "Polsat2.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "Polsat2"
+    ],
+    "id": "pl.polsat2-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-caf-110",
+    "name": "Polsat Café",
+    "xmltvId": "PolsatCafe.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatCafe"
+    ],
+    "id": "pl.polsatcafe-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "comedy-central-family-61",
+    "name": "Polsat Comedy Central Extra",
+    "xmltvId": "PolsatComedyCentralExtra.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatComedyCentralExtra",
+      "Polsat Comedy Central Extra HD"
+    ],
+    "id": "pl.polsatcomedycentralextra-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-doku-548",
+    "name": "Polsat Doku",
+    "xmltvId": "PolsatDoku.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatDoku"
+    ],
+    "id": "pl.polsatdoku-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-film-123",
+    "name": "Polsat Film",
+    "xmltvId": "PolsatFilm.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatFilm"
+    ],
+    "id": "pl.polsatfilm-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-games-653",
+    "name": "Polsat Games",
+    "xmltvId": "PolsatGames.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatGames"
+    ],
+    "id": "pl.polsatgames-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-jimjam-89",
+    "name": "Polsat JimJam",
+    "xmltvId": "PolsatJimJam.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatJimJam"
+    ],
+    "id": "pl.polsatjimjam-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-music-564",
+    "name": "Polsat Music",
+    "xmltvId": "PolsatMusic.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatMusic"
+    ],
+    "id": "pl.polsatmusic-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-news-2-471",
+    "name": "Polsat News 2",
+    "xmltvId": "PolsatNews2.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatNews2"
+    ],
+    "id": "pl.polsatnews2-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-play-21",
+    "name": "Polsat Play",
+    "xmltvId": "PolsatPlay.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatPlay"
+    ],
+    "id": "pl.polsatplay-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-rodzina-651",
+    "name": "Polsat Rodzina",
+    "xmltvId": "PolsatRodzina.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatRodzina"
+    ],
+    "id": "pl.polsatrodzina-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-romans-173",
+    "name": "Polsat Seriale",
+    "xmltvId": "PolsatSeriale.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSeriale"
+    ],
+    "id": "pl.polsatseriale-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-334",
+    "name": "Polsat Sport",
+    "xmltvId": "PolsatSport.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSport"
+    ],
+    "id": "pl.polsatsport-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-extra-485",
+    "name": "Polsat Sport Extra",
+    "xmltvId": "PolsatSportExtra.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportExtra"
+    ],
+    "id": "pl.polsatsportextra-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-fight-546",
+    "name": "Polsat Sport Fight",
+    "xmltvId": "PolsatSportFight.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportFight"
+    ],
+    "id": "pl.polsatsportfight-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-news-431",
+    "name": "Polsat Sport News",
+    "xmltvId": "PolsatSportNews.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportNews"
+    ],
+    "id": "pl.polsatsportnews-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-premium-1-643",
+    "name": "Polsat Sport Premium 1",
+    "xmltvId": "PolsatSportPremium1.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportPremium1"
+    ],
+    "id": "pl.polsatsportpremium1-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-premium-2-644",
+    "name": "Polsat Sport Premium 2",
+    "xmltvId": "PolsatSportPremium2.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportPremium2"
+    ],
+    "id": "pl.polsatsportpremium2-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-premium-3-645",
+    "name": "Polsat Sport Premium 3",
+    "xmltvId": "PolsatSportPremium3PPV.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportPremium3PPV"
+    ],
+    "id": "pl.polsatsportpremium3ppv-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-premium-4-646",
+    "name": "Polsat Sport Premium 4",
+    "xmltvId": "PolsatSportPremium4PPV.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportPremium4PPV"
+    ],
+    "id": "pl.polsatsportpremium4ppv-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-premium-5-642",
+    "name": "Polsat Sport Premium 5",
+    "xmltvId": "PolsatSportPremium5PPV.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportPremium5PPV"
+    ],
+    "id": "pl.polsatsportpremium5ppv-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-sport-premium-6-641",
+    "name": "Polsat Sport Premium 6",
+    "xmltvId": "PolsatSportPremium6PPV.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatSportPremium6PPV"
+    ],
+    "id": "pl.polsatsportpremium6ppv-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-viasat-explore-hd-82",
+    "name": "Polsat Viasat Explore HD",
+    "xmltvId": "PolsatViasatExplore.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatViasatExplore"
+    ],
+    "id": "pl.polsatviasatexplore-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-viasat-history-hd-71",
+    "name": "Polsat Viasat History HD",
+    "xmltvId": "PolsatViasatHistory.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatViasatHistory"
+    ],
+    "id": "pl.polsatviasathistory-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "polsat-viasat-nature-413",
+    "name": "Polsat Viasat Nature HD",
+    "xmltvId": "PolsatViasatNature.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "PolsatViasatNature"
+    ],
+    "id": "pl.polsatviasatnature-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tv-puls-332",
+    "name": "TV Puls",
+    "xmltvId": "TVPuls.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVPuls"
+    ],
+    "id": "pl.tvpuls-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvn-fabula-4",
+    "name": "TVN Fabuła",
+    "xmltvId": "TVNFabula.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVNFabula"
+    ],
+    "id": "pl.tvnfabula-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvn-style-472",
+    "name": "TVN Style",
+    "xmltvId": "TVNStyle.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVNStyle"
+    ],
+    "id": "pl.tvnstyle-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvn-turbo-346",
+    "name": "TVN Turbo",
+    "xmltvId": "TVNTurbo.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVNTurbo"
+    ],
+    "id": "pl.tvnturbo-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvn-24-biznes-i-swiat-6",
+    "name": "TVN24 BiS",
+    "xmltvId": "TVN24BiS.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVN24BiS"
+    ],
+    "id": "pl.tvn24bis-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-3-172",
+    "name": "TVP 3",
+    "xmltvId": "TVP3Warszawa.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP3Warszawa",
+      "TVP 3 Warszawa"
+    ],
+    "id": "pl.tvp3warszawa-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-3-bialystok-5",
+    "name": "TVP 3 Białystok",
+    "xmltvId": "TVP3Bialystok.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP3Bialystok"
+    ],
+    "id": "pl.tvp3bialystok-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-3-bydgoszcz-378",
+    "name": "TVP 3 Bydgoszcz",
+    "xmltvId": "TVP3Bydgoszcz.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP3Bydgoszcz"
+    ],
+    "id": "pl.tvp3bydgoszcz-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-3-gdansk-386",
+    "name": "TVP 3 Gdańsk",
+    "xmltvId": "TVP3Gdansk.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP3Gdansk"
+    ],
+    "id": "pl.tvp3gdansk-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-3-gorzow-wielkopolski-342",
+    "name": "TVP 3 Gorzów Wielkopolski",
+    "xmltvId": "TVP3GorzowWielkopolski.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP3GorzowWielkopolski"
+    ],
+    "id": "pl.tvp3gorzowwielkopolski-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-3-katowice-394",
+    "name": "TVP 3 Katowice",
+    "xmltvId": "TVP3Katowice.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP3Katowice"
+    ],
+    "id": "pl.tvp3katowice-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-3-kielce-475",
+    "name": "TVP 3 Kielce",
+    "xmltvId": "TVP3Kielce.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP3Kielce"
+    ],
+    "id": "pl.tvp3kielce-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "PL",
+    "source": "onet",
+    "sourceId": "tvp-3-krakow-403",
+    "name": "TVP 3 Kraków",
+    "xmltvId": "TVP3Krakow.pl@SD",
+    "feed": "SD",
+    "timezone": "Europe/Warsaw",
+    "aliases": [
+      "TVP3Krakow"
+    ],
+    "id": "pl.tvp3krakow-pl-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "CH",
+    "source": "rts",
+    "sourceId": "143932a79bb5a123a646b68b1d1188d7ae493e5b",
+    "name": "RTS 1",
+    "xmltvId": "RTS1.ch@SD",
+    "feed": "SD",
+    "timezone": "Europe/Zurich",
+    "aliases": [
+      "RTS1",
+      "RTS Un",
+      "RTS Une",
+      "RTS 1 Suisse"
+    ],
+    "id": "ch.rts1-ch-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "CH",
+    "source": "rts",
+    "sourceId": "d7dfff28deee44e1d3c49a3d37d36d492b29671b",
+    "name": "RTS 2",
+    "xmltvId": "RTS2.ch@SD",
+    "feed": "SD",
+    "timezone": "Europe/Zurich",
+    "aliases": [
+      "RTS2",
+      "RTS Deux",
+      "RTS 2 Suisse"
+    ],
+    "id": "ch.rts2-ch-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "CH",
+    "source": "rts",
+    "sourceId": "5d332a26e06d08eec8ad385d566187df72955623",
+    "name": "RTS Info",
+    "xmltvId": "RTSInfo.ch@SD",
+    "feed": "SD",
+    "timezone": "Europe/Zurich",
+    "aliases": [
+      "RTSInfo"
+    ],
+    "id": "ch.rtsinfo-ch-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "951783",
+    "name": "BIG TIME",
+    "xmltvId": "",
+    "feed": "BIG TIME",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena.big-time",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "963543",
+    "name": "قناة طاش",
+    "xmltvId": "",
+    "feed": "قناة طاش",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena.",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "969745",
+    "name": "ناصر القصبي",
+    "xmltvId": "",
+    "feed": "ناصر القصبي",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena..10a589cf",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "976272",
+    "name": "قناة الكبير أوي",
+    "xmltvId": "",
+    "feed": "قناة الكبير أوي",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena..9dfbfad3",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "977946",
+    "name": "قناة العاصوف",
+    "xmltvId": "",
+    "feed": "قناة العاصوف",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena..7fbf33dd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "983124",
+    "name": "قناة مسرح مصر",
+    "xmltvId": "",
+    "feed": "قناة مسرح مصر",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena..2425b90d",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "992538",
+    "name": "قناة اللعبة",
+    "xmltvId": "",
+    "feed": "قناة اللعبة",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena..062339d0",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923693965985",
+    "name": "UNBEATEN",
+    "xmltvId": "",
+    "feed": "UNBEATEN",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena.unbeaten",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923697545394",
+    "name": "القرآن الكريم بصوت السديس",
+    "xmltvId": "",
+    "feed": "القرآن الكريم بصوت السديس",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena..4e2f7e76",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923766669525",
+    "name": "قناة كامل العدد",
+    "xmltvId": "",
+    "feed": "قناة كامل العدد",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena..8648f693",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923766677799",
+    "name": "قناة جاك العلم",
+    "xmltvId": "",
+    "feed": "قناة جاك العلم",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena..381f2355",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923781913188",
+    "name": "AWSN",
+    "xmltvId": "",
+    "feed": "AWSN",
+    "timezone": "UTC",
+    "aliases": [],
+    "id": "mena.awsn",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "986014",
+    "name": "عبدالمجيد عبدالله",
+    "xmltvId": "AbdulmajeedAbdullah.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AbdulmajeedAbdullah"
+    ],
+    "id": "mena.abdulmajeedabdullah-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "989622",
+    "name": "أفلام",
+    "xmltvId": "Aflam.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "Aflam"
+    ],
+    "id": "mena.aflam-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387286",
+    "name": "العربية",
+    "xmltvId": "Alarabiya.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "Alarabiya"
+    ],
+    "id": "mena.alarabiya-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "1003218",
+    "name": "العربية Business",
+    "xmltvId": "AlArabiyaBusiness.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlArabiyaBusiness"
+    ],
+    "id": "mena.alarabiyabusiness-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923569816895",
+    "name": "AL Arabiya English",
+    "xmltvId": "AlArabiyaEnglish.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlArabiyaEnglish"
+    ],
+    "id": "mena.alarabiyaenglish-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923733029294",
+    "name": "العربية برامج",
+    "xmltvId": "AlArabiyaPrograms.ae",
+    "feed": "العربية برامج",
+    "timezone": "UTC",
+    "aliases": [
+      "AlArabiyaPrograms"
+    ],
+    "id": "mena.alarabiyaprograms-ae",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "946948",
+    "name": "الإخبارية",
+    "xmltvId": "AlEkhbariya.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlEkhbariya"
+    ],
+    "id": "mena.alekhbariya-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387288",
+    "name": "الحدث",
+    "xmltvId": "AlHadath.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlHadath"
+    ],
+    "id": "mena.alhadath-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "946946",
+    "name": "القرآن الكريم",
+    "xmltvId": "AlQuranAlKareemTV.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlQuranAlKareemTV"
+    ],
+    "id": "mena.alquranalkareemtv-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "946938",
+    "name": "السعودية",
+    "xmltvId": "AlSaudiya.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlSaudiya"
+    ],
+    "id": "mena.alsaudiya-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "999927",
+    "name": "السعودية الآن",
+    "xmltvId": "AlSaudiyaAlaan.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlSaudiyaAlaan"
+    ],
+    "id": "mena.alsaudiyaalaan-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923775805582",
+    "name": "السورية",
+    "xmltvId": "AlSouriyaTV.sy@HD",
+    "feed": "HD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlSouriyaTV"
+    ],
+    "id": "mena.alsouriyatv-sy-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "946942",
+    "name": "السنة النبوية",
+    "xmltvId": "AlSunnahAlNabawiyahTV.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AlSunnahAlNabawiyahTV"
+    ],
+    "id": "mena.alsunnahalnabawiyahtv-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "1001845",
+    "name": "الشرق ديسكفري",
+    "xmltvId": "AsharqDiscovery.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AsharqDiscovery"
+    ],
+    "id": "mena.asharqdiscovery-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "997605",
+    "name": "Asharq Documentary",
+    "xmltvId": "AsharqDocumentary.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AsharqDocumentary"
+    ],
+    "id": "mena.asharqdocumentary-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "862837",
+    "name": "الشرق",
+    "xmltvId": "AsharqNews.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "AsharqNews"
+    ],
+    "id": "mena.asharqnews-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "975435",
+    "name": "قناة باب الحارة",
+    "xmltvId": "BabAlHara.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "BabAlHara"
+    ],
+    "id": "mena.babalhara-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49922904934759",
+    "name": "Big Time Plus",
+    "xmltvId": "BigTimePlus.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "BigTimePlus"
+    ],
+    "id": "mena.bigtimeplus-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923172215352",
+    "name": "فيروز",
+    "xmltvId": "Fairuz.sa@HD",
+    "feed": "HD",
+    "timezone": "UTC",
+    "aliases": [
+      "Fairuz"
+    ],
+    "id": "mena.fairuz-sa-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923446898171",
+    "name": "FIFA+",
+    "xmltvId": "FIFAPlus.uk",
+    "feed": "FIFA+",
+    "timezone": "UTC",
+    "aliases": [
+      "FIFAPlus"
+    ],
+    "id": "mena.fifaplus-uk",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923639151416",
+    "name": "Goal Zone",
+    "xmltvId": "GoalZone.sa",
+    "feed": "Goal Zone",
+    "timezone": "UTC",
+    "aliases": [
+      "GoalZone"
+    ],
+    "id": "mena.goalzone-sa",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923697660442",
+    "name": "إقرأ",
+    "xmltvId": "IqraaArabic.sa",
+    "feed": "إقرأ",
+    "timezone": "UTC",
+    "aliases": [
+      "IqraaArabic"
+    ],
+    "id": "mena.iqraaarabic-sa",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49922763891977",
+    "name": "ماجد المهندس",
+    "xmltvId": "MajidAlMohandis.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MajidAlMohandis"
+    ],
+    "id": "mena.majidalmohandis-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "988045",
+    "name": "قناة مرايا",
+    "xmltvId": "Maraya.sa@HD",
+    "feed": "HD",
+    "timezone": "UTC",
+    "aliases": [
+      "Maraya"
+    ],
+    "id": "mena.maraya-sa-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387238",
+    "name": "MBC1",
+    "xmltvId": "MBC1.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBC1"
+    ],
+    "id": "mena.mbc1-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "400917",
+    "name": "MBC2",
+    "xmltvId": "MBC2.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBC2"
+    ],
+    "id": "mena.mbc2-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "409385",
+    "name": "MBC3",
+    "xmltvId": "MBC3.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBC3"
+    ],
+    "id": "mena.mbc3-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "400919",
+    "name": "MBC4",
+    "xmltvId": "MBC4.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBC4"
+    ],
+    "id": "mena.mbc4-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387937",
+    "name": "MBC5",
+    "xmltvId": "MBC5.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBC5"
+    ],
+    "id": "mena.mbc5-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "400921",
+    "name": "MBC Action",
+    "xmltvId": "MBCAction.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCAction"
+    ],
+    "id": "mena.mbcaction-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "409387",
+    "name": "MBC Bollywood",
+    "xmltvId": "MBCBollywood.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCBollywood"
+    ],
+    "id": "mena.mbcbollywood-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387251",
+    "name": "MBC Drama",
+    "xmltvId": "MBCDrama.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCDrama"
+    ],
+    "id": "mena.mbcdrama-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387294",
+    "name": "MBC Iraq",
+    "xmltvId": "MBCIraq.iq@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCIraq"
+    ],
+    "id": "mena.mbciraq-iq-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387293",
+    "name": "MBC Masr2",
+    "xmltvId": "MBCMasr2.eg@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCMasr2"
+    ],
+    "id": "mena.mbcmasr2-eg-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387290",
+    "name": "MBC Masr",
+    "xmltvId": "MBCMasr.eg@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCMasr"
+    ],
+    "id": "mena.mbcmasr-eg-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923122575716",
+    "name": "مصر دراما",
+    "xmltvId": "MBCMasrDrama.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCMasrDrama"
+    ],
+    "id": "mena.mbcmasrdrama-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "400924",
+    "name": "MBC MAX",
+    "xmltvId": "MBCMax.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCMax"
+    ],
+    "id": "mena.mbcmax-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "418308",
+    "name": "MBC Persia",
+    "xmltvId": "MBCPersia.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCPersia"
+    ],
+    "id": "mena.mbcpersia-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "387296",
+    "name": "MBC Plus Drama",
+    "xmltvId": "MBCPlusDrama.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MBCPlusDrama"
+    ],
+    "id": "mena.mbcplusdrama-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "986346",
+    "name": "محمد عبده",
+    "xmltvId": "MohammedAbdo.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MohammedAbdo"
+    ],
+    "id": "mena.mohammedabdo-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "986064",
+    "name": "Movies Action",
+    "xmltvId": "MoviesAction.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MoviesAction"
+    ],
+    "id": "mena.moviesaction-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "986069",
+    "name": "Movies Thriller",
+    "xmltvId": "MoviesThriller.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MoviesThriller"
+    ],
+    "id": "mena.moviesthriller-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923518527492",
+    "name": "MTV Lebanon",
+    "xmltvId": "MTV.lb@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "MTV"
+    ],
+    "id": "mena.mtv-lb-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49923172117967",
+    "name": "رابح صقر",
+    "xmltvId": "RabehSaqer.sa@HD",
+    "feed": "HD",
+    "timezone": "UTC",
+    "aliases": [
+      "RabehSaqer"
+    ],
+    "id": "mena.rabehsaqer-sa-hd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "986024",
+    "name": "راشد الماجد",
+    "xmltvId": "RashidAlMajed.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "RashidAlMajed"
+    ],
+    "id": "mena.rashidalmajed-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "995495",
+    "name": "الثقافية",
+    "xmltvId": "SaudiThaqafiyaTV.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "SaudiThaqafiyaTV"
+    ],
+    "id": "mena.saudithaqafiyatv-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "946940",
+    "name": "SBC",
+    "xmltvId": "SBC.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "SBC"
+    ],
+    "id": "mena.sbc-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "409390",
+    "name": "Spacetoon",
+    "xmltvId": "SpacetoonArabic.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "SpacetoonArabic"
+    ],
+    "id": "mena.spacetoonarabic-ae-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "49922763510387",
+    "name": "طرب",
+    "xmltvId": "Tarab.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "Tarab"
+    ],
+    "id": "mena.tarab-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "946945",
+    "name": "ذكريات",
+    "xmltvId": "ThikrayatTV.sa@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "ThikrayatTV"
+    ],
+    "id": "mena.thikrayattv-sa-sd",
+    "identityStatus": "source-listed"
+  },
+  {
+    "country": "MENA",
+    "source": "shahid",
+    "sourceId": "414449",
+    "name": "وناسه",
+    "xmltvId": "Wanasah.ae@SD",
+    "feed": "SD",
+    "timezone": "UTC",
+    "aliases": [
+      "Wanasah"
+    ],
+    "id": "mena.wanasah-ae-sd",
     "identityStatus": "source-listed"
   }
 ]
