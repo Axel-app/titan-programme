@@ -81,6 +81,13 @@ class AdditionalSourceTests(unittest.TestCase):
         self.assertEqual(sum(bool(e['imageURL']) for e in result), 4)
         self.assertTrue(all(e['end'] - e['start'] == 1800 for e in result))
 
+    def test_source_image_paths_encode_spaces_without_double_encoding(self):
+        raw = 'https://shahid.mbc.net/mediaObject/Bab Alhara/épisode%201.jpg?width=640&title=a b'
+        encoded = image_url(raw, 'shahid')
+        self.assertEqual(encoded, 'https://shahid.mbc.net/mediaObject/Bab%20Alhara/%C3%A9pisode%201.jpg?width=640&title=a%20b')
+        self.assertEqual(image_url(encoded, 'shahid'), encoded)
+        self.assertIsNone(image_url(raw + chr(10), 'shahid'))
+
     def test_new_hosts_remain_source_and_port_specific(self):
         validate_url('https://izmaottvsc14.tvplus.com.tr:33207/EPG/JSON/PlayBillList')
         for url in ('https://api2.shahid.net:33207/a', 'https://izmaottvsc14.tvplus.com.tr.evil.test:33207/a', 'https://user@www.rts.ch/a'):

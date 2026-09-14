@@ -2,7 +2,7 @@
 import re
 import unicodedata
 from datetime import datetime, timezone
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, urlunsplit, quote
 from zoneinfo import ZoneInfo
 
 IMAGE_HOSTS = {
@@ -37,7 +37,10 @@ def image_url(value, source):
             return None
         if any(ord(c) < 32 for c in value):
             return None
-        return value
+        return urlunsplit((url.scheme, url.netloc,
+            quote(url.path, safe="/%:@!$&'()*+,;=-._~"),
+            quote(url.query, safe="/%?:@!$&'()*+,;=-._~"),
+            quote(url.fragment, safe="/%?:@!$&'()*+,;=-._~")))
     except (ValueError, KeyError):
         return None
 
