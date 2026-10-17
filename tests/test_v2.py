@@ -161,6 +161,44 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(directory['channels'][0]['ids'], ['tf1.fr'])
         self.assertIn('TF1 HD', directory['channels'][0]['names'])
 
+    def test_an_edition_keeps_its_day_while_another_country_guide_moves(self):
+        output = self.root / 'output'
+        kr = [[NOW - 600, NOW + 5 * 3600, '뉴스', 'https://img.example/k.jpg']]
+        samsung = reduction('samsungtvplus-kr', 3, [dict(id='KR1300003KW', names=['STN'], country='KR', programmes=kr)], self.root)
+        first = build(output, self.reductions + [samsung], self.shards, NOW)
+        fr_day = (output / 'v2/fr/day-0.json').read_bytes()
+        # The operator now describes TF1 longer than the guide: a rebuilt FR day would change.
+        channel = self.shards[0]['channels'][0]
+        channel.update(fetchedAt=NOW + 7200, programmes=[dict(title='Direct corrigé', start=NOW + 7000, end=NOW + 20000, imageURL='https://oqee.net/y.jpg')])
+        kr = [[NOW + 7000, NOW + 7 * 3600, '드라마', 'https://img.example/d.jpg']]
+        samsung = reduction('samsungtvplus-kr', 3, [dict(id='KR1300003KW', names=['STN'], country='KR', programmes=kr)], self.root, anchor=NOW + 7200)
+        second = build(output, self.reductions + [samsung], self.shards, NOW + 7200)
+        self.assertEqual((output / 'v2/fr/day-0.json').read_bytes(), fr_day)
+        self.assertEqual(second['editions']['FR']['day'], first['editions']['FR']['day'])
+        self.assertEqual(second['editions']['FR']['builtAt'], NOW)
+        self.assertNotEqual(second['editions']['KR']['day'], first['editions']['KR']['day'])
+        self.assertEqual(second['editions']['KR']['builtAt'], NOW + 7200)
+        self.assertNotIn('inputs', second['editions']['KR'])
+        # The kept edition still gets its live corrections.
+        live = json.loads((output / 'v2/fr/live.json').read_bytes())
+        self.assertEqual(live['channels']['tf1.fr'][0][2], 'Direct corrigé')
+        # After 13 hours the edition is built again, with the operator programmes of that moment.
+        channel['fetchedAt'] = NOW + 13 * 3600 + 60
+        third = build(output, self.reductions + [samsung], self.shards, NOW + 13 * 3600 + 60)
+        self.assertEqual(third['editions']['FR']['builtAt'], NOW + 13 * 3600 + 60)
+        self.assertNotEqual((output / 'v2/fr/day-0.json').read_bytes(), fr_day)
+
+    def test_a_state_written_before_the_edition_inputs_rebuilds_every_edition(self):
+        output = self.root / 'output'
+        build(output, self.reductions, self.shards, NOW)
+        state_file = output / 'v2/state.json'
+        state = json.loads(state_file.read_bytes())
+        for report in state['editions'].values():
+            report.pop('inputs')
+        state['signature'] = 'older'
+        state_file.write_text(json.dumps(state))
+        self.assertEqual(build(output, self.reductions, self.shards, NOW + 1800)['editions']['FR']['builtAt'], NOW + 1800)
+
     def test_stale_operator_data_is_not_published_live(self):
         self.shards[0]['channels'][0]['fetchedAt'] = NOW - 7200
         manifest = build(self.root / 'output', self.reductions, self.shards, NOW)
@@ -185,6 +223,52 @@ class StoreTests(unittest.TestCase):
             opener.answers.append(OSError('down'))
             later = store.reduced('xmltvfr', 'https://xmltvfr.fr/xmltv/xmltv.xml.gz', 1, None, NOW + 2 * REFRESH_SECONDS + 120)
             self.assertEqual(later, first)
+
+
+    SAMSUNG = 'https://i.mjh.nz/SamsungTVPlus/kr.xml.gz'
+
+    def samsung(self, opener, folder, now, end):
+        data = gzip.compress(guide(('KR1300003KW', now - 600, end, '뉴스', 'https://img.example/k.jpg'), channels=(('KR1300003KW', 'STN'),)))
+        opener.answers.append(FakeResponse(data, {'ETag': f'"{now}"'}))
+
+    def test_a_guide_ending_within_4_hours_is_asked_again_after_2_hours(self):
+        with tempfile.TemporaryDirectory() as folder:
+            opener = FakeOpener([])
+            store = GuideStore(Path(folder) / 'cache', Path(folder) / 'out', opener=opener, pause=0)
+            self.samsung(opener, folder, NOW, NOW + 5 * 3600)
+            first = store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', NOW)
+            self.assertEqual(first['horizon'], NOW + 5 * 3600)
+            # 3.5 hours left, but asked less than 2 hours ago.
+            self.assertEqual(store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', NOW + 5400), first)
+            self.assertEqual(len(opener.requests), 1)
+            later = NOW + 2 * 3600 + 60
+            self.samsung(opener, folder, later, later + 5 * 3600)
+            second = store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', later)
+            self.assertEqual(opener.requests[-1].get_header('If-none-match'), f'"{NOW}"')
+            self.assertEqual((second['anchor'], second['horizon']), (later, later + 5 * 3600))
+            # Unchanged guide: the next question waits 2 more hours, it does not repeat every 30 minutes.
+            opener.answers.append(HTTPError('u', 304, 'Not Modified', {}, None))
+            self.assertEqual(store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', later + 2 * 3600 + 60), second)
+            self.assertEqual(store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', later + 2 * 3600 + 1860), second)
+            self.assertEqual(len(opener.requests), 3)
+
+    def test_a_guide_two_days_ahead_and_an_older_summary_stay_on_12_hours(self):
+        with tempfile.TemporaryDirectory() as folder:
+            opener = FakeOpener([])
+            store = GuideStore(Path(folder) / 'cache', Path(folder) / 'out', opener=opener, pause=0)
+            self.samsung(opener, folder, NOW, NOW + 40 * 3600)
+            first = store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', NOW)
+            self.assertEqual(store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', NOW + 11 * 3600), first)
+            self.assertEqual(len(opener.requests), 1)
+            # A summary written before the horizon existed, for a guide that ends soon.
+            self.samsung(opener, folder, NOW + 11 * 3600 + 1, NOW + 13 * 3600)
+            store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', NOW + 12 * 3600 + 60)
+            summary_file = Path(folder) / 'out/xmltv/samsungtvplus-kr.summary.json'
+            summary = json.loads(summary_file.read_text())
+            summary.pop('horizon')
+            summary_file.write_text(json.dumps(summary))
+            self.assertEqual(store.reduced('samsungtvplus-kr', self.SAMSUNG, 3, 'KR', NOW + 16 * 3600), summary)
+            self.assertEqual(len(opener.requests), 2)
 
 
 class CadenceTests(unittest.TestCase):

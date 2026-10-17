@@ -2,8 +2,9 @@
 """Schema 2: one channel directory per edition, illustrated programmes for today and tomorrow in
 stable buckets, and a small live file refreshed from the operator collectors.
 
-Day buckets only change when a public guide was refreshed (about twice a day), so TVs revalidate
-them with an ETag instead of downloading them again. The live file carries the operator programmes
+Day buckets only change when a public guide of their edition was refreshed (about twice a day,
+more often where Samsung TV Plus feeds the edition), so TVs revalidate them with an ETag instead of
+downloading them again. The live file carries the operator programmes
 of the coming hours, which correct the day buckets on services whose guide changes at short notice.
 """
 
@@ -161,7 +162,17 @@ def buckets_for(channels):
     return count, {c['k']: zlib.crc32(c['k'].encode()) % count for c in channels}
 
 
-def write_day(output, day, now):
+def guide_inputs(items, reductions):
+    """{edition: digest of the public guides (name, anchor) it is built from}."""
+    anchors = {r['name']: r['anchor'] for r in reductions}
+    inputs = {}
+    for item in items:
+        if item['source'] in anchors:
+            inputs.setdefault(item['edition'], set()).add((item['source'], anchors[item['source']]))
+    return {ed: hashlib.sha256(encode(sorted(pairs))).hexdigest()[:16] for ed, pairs in inputs.items()}
+
+
+def write_day(output, day, now, inputs=None):
     """Directory + buckets per edition. Returns {edition: report}."""
     reports = {}
     for ed, channels in day.items():
@@ -183,7 +194,8 @@ def write_day(output, day, now):
                 stale.unlink()
         reports[ed] = dict(channels=len(channels), buckets=count, builtAt=now, start=start, end=end,
                            day=hashlib.sha256(''.join(digests).encode()).hexdigest()[:16],
-                           sources=sorted({c['source'].split('-')[0] for c in channels}))
+                           sources=sorted({c['source'].split('-')[0] for c in channels}),
+                           inputs=(inputs or {}).get(ed, ''))
     return reports
 
 
@@ -214,7 +226,8 @@ def write_live(output, editions, by_operator, operator_shards, now):
 
 
 def build(output, reductions, operator_shards, now, force=False):
-    """Day buckets only when a public guide changed (or after 13 hours); live and manifest every run."""
+    """Day buckets of an edition only when one of its public guides changed (or after 13 hours); live
+    and manifest every run."""
     output = Path(output)
     state_file = output / 'v2' / 'state.json'
     try:
@@ -223,12 +236,24 @@ def build(output, reductions, operator_shards, now, force=False):
         state = {}
     signature = hashlib.sha256(encode(sorted((r['name'], r['anchor']) for r in reductions))).hexdigest()[:16]
     if force or state.get('signature') != signature or not 0 <= now - state.get('builtAt', 0) < 13 * 3600 or not state.get('editions'):
-        day = build_day(entries(reductions, operator_shards))
-        state = dict(signature=signature, builtAt=now, editions=write_day(output, day, now), operators=operator_targets(day))
+        items = entries(reductions, operator_shards)
+        inputs = guide_inputs(items, reductions)
+        day = build_day(items)
+        previous, operators = state.get('editions', {}), state.get('operators', {})
+        # An edition none of whose guides moved keeps its files: a Samsung TV Plus refresh every
+        # 2 hours must not make every other country download its day again.
+        kept = {ed for ed in day if not force and ed in previous and previous[ed].get('inputs') == inputs.get(ed, '')
+                and 0 <= now - previous[ed].get('builtAt', 0) < 13 * 3600 and (output / 'v2' / ed.lower() / 'channels.json').is_file()}
+        rebuilt = {ed: channels for ed, channels in day.items() if ed not in kept}
+        editions = dict(write_day(output, rebuilt, now, inputs), **{ed: previous[ed] for ed in kept})
+        operators = dict({op: target for op, target in operators.items() if target[0] in kept}, **operator_targets(rebuilt))
+        state = dict(signature=signature, builtAt=min(report['builtAt'] for report in editions.values()) if editions else now,
+                     editions=dict(sorted(editions.items())), operators=operators)
         atomic_write(state_file, encode(state))
     editions = state['editions']
     live = write_live(output, editions, state.get('operators', {}), operator_shards, now)
     manifest = dict(schemaVersion=SCHEMA, generatedAt=now, liveRefreshAfter=now + 1800,
-                    editions={ed: dict(report, **live.get(ed, dict(live='', liveChannels=0))) for ed, report in sorted(editions.items())})
+                    editions={ed: dict({k: v for k, v in report.items() if k != 'inputs'}, **live.get(ed, dict(live='', liveChannels=0)))
+                              for ed, report in sorted(editions.items())})
     atomic_write(output / 'v2' / 'manifest.json', encode(manifest))
     return manifest

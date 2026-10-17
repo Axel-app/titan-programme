@@ -4,6 +4,8 @@
 Each guide is fetched with a conditional request, then reduced once to the programmes that carry
 a picture inside the publication window. Later collections reuse that reduced copy until the
 guide is due again, so the 30-minute schedule never re-downloads or re-parses the large files.
+Guides that only look a few hours ahead (Samsung TV Plus: about 5 hours) are asked again before
+they run out, at most every 2 hours.
 """
 
 import gzip
@@ -22,6 +24,8 @@ from http_client import SafeRedirect, atomic_write
 
 GUIDE_HOSTS = {'xmltvfr.fr', 'epgshare01.online', 'i.mjh.nz'}
 REFRESH_SECONDS = 12 * 3600
+EARLY_MARGIN = 4 * 3600
+EARLY_MIN_SECONDS = 2 * 3600
 WINDOW_BEFORE = 3 * 3600
 WINDOW_AFTER = 48 * 3600
 MAX_GUIDE_BYTES = 400 * 1024 * 1024
@@ -109,6 +113,12 @@ def country_of(channel_id, fallback):
     return fallback
 
 
+def horizon(channels):
+    """Time until which three channels out of four still have a programme; None without any."""
+    ends = sorted(max(p[1] for p in c['programmes']) for c in channels if c['programmes'])
+    return ends[len(ends) // 4] if ends else None
+
+
 def reduce_guide(stream, anchor, fallback_country):
     """Channels with at least one illustrated programme inside [anchor-3h, anchor+48h]."""
     low, high = anchor - WINDOW_BEFORE, anchor + WINDOW_AFTER
@@ -151,9 +161,15 @@ class GuideStore:
         except (OSError, ValueError):
             return {}
 
-    def due(self, name, now):
+    def due(self, name, now, until=None):
+        """Twice a day, or earlier when the previous reduction ends within 4 hours ([until])."""
         meta = self.meta(name)
-        return not (0 <= now - meta.get('checkedAt', 0) < REFRESH_SECONDS) and now >= meta.get('retryAt', 0)
+        if now < meta.get('retryAt', 0):
+            return False
+        elapsed = now - meta.get('checkedAt', 0)
+        if not 0 <= elapsed < REFRESH_SECONDS:
+            return True
+        return until is not None and until - now < EARLY_MARGIN and elapsed >= EARLY_MIN_SECONDS
 
     def download(self, name, url, now, conditional):
         """True when a new body was stored; False when the reduction already describes the guide."""
@@ -197,7 +213,7 @@ class GuideStore:
         except (OSError, ValueError):
             previous = None
         fresh_window = previous and now < previous['anchor'] + REFRESH_SECONDS + 6 * 3600
-        if previous and fresh_window and not self.due(name, now):
+        if previous and fresh_window and not self.due(name, now, previous.get('horizon')):
             self.stats['reused'] += 1
             return previous
         try:
@@ -225,7 +241,7 @@ class GuideStore:
         finally:
             body.unlink(missing_ok=True)
         atomic_write(target, json.dumps(channels, ensure_ascii=False, separators=(',', ':')).encode())
-        summary = dict(name=name, rank=rank, anchor=now, path=str(target), channels=len(channels))
+        summary = dict(name=name, rank=rank, anchor=now, path=str(target), channels=len(channels), horizon=horizon(channels))
         atomic_write(summary_file, json.dumps(summary).encode())
         return summary
 
