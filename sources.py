@@ -226,6 +226,13 @@ def vodafone_events(data):
     return result
 
 
+# Guides that publish a day or more ahead are asked every 6 hours: the daily guide (schema 2)
+# carries their programmes, and the 30-minute run only needs Oqee's hours on air.
+SLOW_TTL = 6 * 3600
+NEAR_TTL = 1800
+OQEE_HOURS_AHEAD = 30
+
+
 def collect_group(client, channels, now):
     source, country = channels[0]['source'], channels[0]['country']
     day = datetime.fromtimestamp(now, timezone.utc).date()
@@ -234,7 +241,7 @@ def collect_group(client, channels, now):
     warnings = {c['id']: [] for c in channels}
     def fetch(url, channel=None, as_json=True, affected=None, **kwargs):
         try:
-            kwargs.setdefault('ttl', 900 if source in ('oqee', 'sky') else 1800)
+            kwargs.setdefault('ttl', SLOW_TTL)
             data = client.get(url, **kwargs)
             return json.loads(data) if as_json else data.decode('utf-8')
         except Exception as error:
@@ -249,12 +256,17 @@ def collect_group(client, channels, now):
         basis = collect_additional(source, channels, now, fetch, rows, warnings)
     elif source == 'oqee':
 
-        for hour in (now // 3600 * 3600, (now // 3600 + 1) * 3600):
-            guide = fetch(f'https://api.oqee.net/api/v1/epg/all/{hour}')
+        # The hour on air and the next one every 30 minutes (late changes), the following hours
+        # every 6 hours: Oqee's guide then reaches as far ahead as the others.
+        for offset in range(OQEE_HOURS_AHEAD):
+            hour = (now // 3600 + offset) * 3600
+            guide = fetch(f'https://api.oqee.net/api/v1/epg/all/{hour}', ttl=NEAR_TTL if offset < 2 else SLOW_TTL)
             if guide is None:
                 continue
             if not guide.get('success'):
-                raise ValueError('oqee_unsuccessful')
+                if offset < 2:
+                    raise ValueError('oqee_unsuccessful')
+                continue  # a far hour Oqee does not publish yet never spoils the hours on air
             for channel in channels:
                 for item in guide['result']['entries'].get(channel['sourceId'], []):
                     live = item.get('live') or {}
@@ -400,9 +412,12 @@ def collect_group(client, channels, now):
                 rows[channel['id']].extend(events)
         basis = 'Selected page timezone → UTC: ' + ', '.join(sorted(zones))
     elif source == 'mitv':
+        # A mi.tv day runs from about 06:00 to 06:00 UTC: before 08:00 UTC, the programme on air
+        # (the American evening) is still on the previous day's page.
+        pages = ([day - timedelta(days=1)] if datetime.fromtimestamp(now, timezone.utc).hour < 8 else []) + dates
         for channel in channels:
             starts = []
-            for date in dates:
+            for date in pages:
 
                 text = fetch(f'https://mi.tv/{country.lower()}/async/channel/{channel["sourceId"]}/{date}/0', channel, as_json=False)
                 if text is None:

@@ -1,0 +1,58 @@
+name: Grab guides
+
+# Once a day, the iptv-org/epg grabbers fetch today and tomorrow for the channels the public guides
+# do not illustrate yet (iptvorg_channels.py). The guide is handed to the "Update" workflow through
+# the Actions cache; this job holds no secret and never deploys.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 11 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: guides-grab
+  cancel-in-progress: false
+
+jobs:
+  grab:
+    if: github.event_name == 'workflow_dispatch' || vars.PROGRAMME_SCHEDULE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      # Third-party code at a reviewed commit.
+      - uses: actions/checkout@v4
+        with:
+          repository: iptv-org/epg
+          ref: 6f6cfe2f82fac6bf4e09def36baae4fc5656bacc
+          path: iptv-org-epg
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/cache/restore@v4
+        with:
+          path: output
+          key: programme-v1-latest
+          restore-keys: programme-v1-
+      - name: Channels still missing from the public guides
+        run: python3 iptvorg_channels.py --epg iptv-org-epg --v2 output/v2 --output iptvorg.channels.xml
+      - name: Install grabbers
+        working-directory: iptv-org-epg
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Grab today and tomorrow
+        working-directory: iptv-org-epg
+        continue-on-error: true
+        run: |
+          mkdir -p ../grabbed
+          npm run grab --- --channels=../iptvorg.channels.xml --output=../grabbed/iptvorg.xml --days=2 --maxConnections=2 --delay=250 --timeout=15000
+      - name: Compress
+        run: test -s grabbed/iptvorg.xml && gzip -f grabbed/iptvorg.xml
+      - uses: actions/cache/save@v4
+        with:
+          path: grabbed
+          key: iptvorg-guide-${{ github.run_id }}

@@ -21,7 +21,7 @@ jobs:
   publish:
     if: github.event_name == 'workflow_dispatch' || vars.PROGRAMME_SCHEDULE_ENABLED == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       WRANGLER_SEND_METRICS: 'false'
     steps:
@@ -45,6 +45,19 @@ jobs:
       - run: python3 -m unittest discover -s tests -v
       - name: Collect
         run: python3 collect.py --refresh-minutes 30
+      # Latest guide of the iptv-org grabbers (guides-grab.yml), if any.
+      - uses: actions/cache/restore@v4
+        with:
+          path: grabbed
+          key: iptvorg-guide-latest
+          restore-keys: iptvorg-guide-
+      # Schema 2: public guides are downloaded at most twice a day (conditional requests), the
+      # day buckets only change with them, live.json follows the operator collection above.
+      # A failure here never blocks the schema 1 publication.
+      - name: Collect schema 2
+        continue-on-error: true
+        timeout-minutes: 12
+        run: python3 collect_v2.py
       - name: Cache
         if: ${{ always() && !cancelled() }}
         uses: actions/cache/save@v4

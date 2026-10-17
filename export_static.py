@@ -18,7 +18,34 @@ HEADERS = b'''/v1/*
   X-Content-Type-Options: nosniff
   Access-Control-Allow-Origin: *
   Referrer-Policy: no-referrer
+/v2/*
+  Cache-Control: public, max-age=60, must-revalidate
+  Content-Type: application/json; charset=utf-8
+  X-Content-Type-Options: nosniff
+  Access-Control-Allow-Origin: *
+  Referrer-Policy: no-referrer
 '''
+V2_FILE_LIMIT = 20 * 1024 * 1024
+V1_OQEE_HOURS = 2  # the hour on air and the next one, as schema 1 always served
+
+
+def v2_files(source):
+    """Schema 2 files, checked edition by edition. Any problem drops schema 2, never schema 1."""
+    root = Path(source) / 'v2'
+    manifest = json.loads((root / 'manifest.json').read_bytes())
+    if manifest.get('schemaVersion') != 2 or not isinstance(manifest.get('editions'), dict):
+        raise ValueError('invalid_v2_manifest')
+    files = {'v2/manifest.json': (root / 'manifest.json').read_bytes()}
+    for edition, report in manifest['editions'].items():
+        folder = edition.lower()
+        names = ['channels.json', 'live.json'] + [f'day-{b}.json' for b in range(report['buckets'])]
+        for name in names:
+            data = (root / folder / name).read_bytes()
+            body = json.loads(data)
+            if body.get('schemaVersion') != 2 or body.get('edition') != edition or len(data) > V2_FILE_LIMIT:
+                raise ValueError(f'invalid_v2_file_{folder}_{name}')
+            files[f'v2/{folder}/{name}'] = data
+    return files
 
 
 def export_static(source=ROOT / 'output', destination=ROOT / 'dist', now=None):
@@ -42,7 +69,12 @@ def export_static(source=ROOT / 'output', destination=ROOT / 'dist', now=None):
             if channel['country'] != country or len(channel['programmes']) > 2000:
                 raise ValueError(f'invalid_channel_{country}')
             clean = {key: channel[key] for key in CHANNEL_FIELDS}
-            clean['programmes'] = [{key: event.get(key) for key in EVENT_FIELDS} for event in channel['programmes']]
+            events = channel['programmes']
+            if channel['source'] == 'oqee':
+                # Schema 1 keeps Oqee's two hours on air, as before: the following hours feed the
+                # daily guide (schema 2) only, installed apps keep their small download.
+                events = [e for e in events if e['start'] < (shard['generatedAt'] // 3600 + V1_OQEE_HOURS) * 3600]
+            clean['programmes'] = [{key: event.get(key) for key in EVENT_FIELDS} for event in events]
             public['channels'].append(clean)
             if (min(channel['validUntil'], shard['validUntil']) > now
                     and channel['timingStatus'] == 'source-format-checked'
@@ -64,15 +96,23 @@ def export_static(source=ROOT / 'output', destination=ROOT / 'dist', now=None):
     files['v1/manifest.json'] = encode(dict(schemaVersion=1, generatedAt=max(r['generatedAt'] for r in reports),
         refreshAfter=min(r['refreshAfter'] for r in reports), countries=reports))
     files['_headers'] = HEADERS
+    try:
+        files.update(v2_files(source))
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        print(f'Schema 2 skipped: {type(error).__name__}: {str(error)[:120]}')
 
 
     if destination.exists():
+        # Buckets of a previous schema 2 export (fewer buckets today, edition gone) are ours to drop.
+        for path in (destination / 'v2').rglob('*') if (destination / 'v2').is_dir() else []:
+            if path.is_file() and not path.is_symlink() and path.relative_to(destination).as_posix() not in files:
+                path.unlink()
         for path in destination.rglob('*'):
             if path.is_symlink() or (path.is_file() and path.relative_to(destination).as_posix() not in files):
                 raise ValueError('destination_contains_non_public_files')
     for relative, data in files.items():
         atomic_write(destination / relative, data)
-    print(f'Export: {len(files)-1} JSON files, {sum(len(v) for k,v in files.items() if k.endswith(".json"))} bytes, {healthy} current programmes')
+    print(f'Export: {len(files)-1} JSON files ({sum(1 for k in files if k.startswith("v2/"))} schema 2), {sum(len(v) for k,v in files.items() if k.endswith(".json"))} bytes, {healthy} current programmes')
     return files
 
 
