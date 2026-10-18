@@ -1,3 +1,4 @@
+import hashlib
 import io
 import itertools
 import json
@@ -172,6 +173,37 @@ class ThumbnailTests(unittest.TestCase):
             thumbnails.update(source, NOW + 9 * 3600, fetch=lambda url: picture(1280, 720))
             export.export_static(source, dist, NOW + 60)
             self.assertFalse(published.exists())
+
+    @unittest.skipIf(Image is None, 'Pillow')
+    def test_each_edition_lists_the_pictures_whose_copy_is_published(self):
+        # The apps ask only for the copies listed: the others load their own link at once.
+        def prefix(link):
+            return Path(thumbnails.relative_path(link)).stem[:12]
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = self.guide(root, [[NOW - 600, NOW + 1200, 'Maintenant', A], [NOW + 1200, NOW + 3000, 'Ensuite', B],
+                                       [NOW + 5 * 3600, NOW + 6 * 3600, 'Ce soir', C]])
+            thumbnails.update(source, NOW, fetch=lambda url: picture(1280, 720))
+            files = export.export_static(source, root / 'dist', NOW + 60)
+            self.assertEqual(json.loads(files['v2/fr/thumbs.json']), dict(schemaVersion=2, edition='FR', thumbs=sorted([prefix(A), prefix(B)])))
+            manifest = json.loads(files['v2/manifest.json'])
+            self.assertEqual(manifest['editions']['FR']['thumbs'], hashlib.sha256(files['v2/fr/thumbs.json']).hexdigest()[:16])
+            self.assertEqual((root / 'dist' / 'v2' / 'fr' / 'thumbs.json').read_bytes(), files['v2/fr/thumbs.json'])
+            self.assertEqual(json.loads((root / 'dist' / 'v2' / 'manifest.json').read_bytes())['editions']['FR']['thumbs'],
+                             manifest['editions']['FR']['thumbs'])
+            # Room for one copy only: the list names that one alone, and the guide stays whole.
+            with patch.object(export, 'ASSET_LIMIT', len(files) + 1):
+                files = export.export_static(source, root / 'dist', NOW + 60)
+            self.assertEqual(json.loads(files['v2/fr/thumbs.json'])['thumbs'], [prefix(A)])
+            self.assertFalse((root / 'dist' / thumbnails.relative_path(B)).exists())
+
+    def test_without_thumbnails_every_edition_lists_none(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = self.guide(root, [[NOW - 600, NOW + 1200, 'Maintenant', A]])
+            files = export.export_static(source, root / 'dist', NOW + 60)
+            self.assertEqual(json.loads(files['v2/fr/thumbs.json'])['thumbs'], [])
+            self.assertIn('thumbs', json.loads(files['v2/manifest.json'])['editions']['FR'])
 
     @unittest.skipIf(Image is None, 'Pillow')
     def test_the_worker_file_limit_keeps_the_programmes_on_air_first(self):

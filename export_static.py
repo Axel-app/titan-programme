@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -40,21 +41,43 @@ V1_OQEE_HOURS = 2  # the hour on air and the next one, as schema 1 always served
 
 
 def v2_files(source):
-    """Schema 2 files, checked edition by edition. Any problem drops schema 2, never schema 1."""
+    """Schema 2 files, checked edition by edition. Any problem drops schema 2, never schema 1.
+    Also returns the picture links of each edition (day buckets and live file)."""
     root = Path(source) / 'v2'
     manifest = json.loads((root / 'manifest.json').read_bytes())
     if manifest.get('schemaVersion') != 2 or not isinstance(manifest.get('editions'), dict):
         raise ValueError('invalid_v2_manifest')
     files = {'v2/manifest.json': (root / 'manifest.json').read_bytes()}
+    links = {}
     for edition, report in manifest['editions'].items():
         folder = edition.lower()
         names = ['channels.json', 'live.json'] + [f'day-{b}.json' for b in range(report['buckets'])]
+        pictures = links.setdefault(edition, set())
         for name in names:
             data = (root / folder / name).read_bytes()
             body = json.loads(data)
             if body.get('schemaVersion') != 2 or body.get('edition') != edition or len(data) > V2_FILE_LIMIT:
                 raise ValueError(f'invalid_v2_file_{folder}_{name}')
             files[f'v2/{folder}/{name}'] = data
+            if name != 'channels.json':
+                pictures.update(p[3] for programmes in body['channels'].values() for p in programmes
+                                if len(p) > 3 and isinstance(p[3], str) and p[3])
+    return files, links
+
+
+def thumbnail_lists(manifest, links, thumbs):
+    """Per edition, the pictures whose small copy this export publishes (first 12 hex characters of
+    the SHA-256 of their link): the apps ask only for copies that exist, the others load their own
+    link at once. The manifest names each list's signature."""
+    published = {Path(relative).stem for relative in thumbs}
+    manifest = json.loads(manifest)
+    files = {}
+    for edition, pictures in links.items():
+        digests = (hashlib.sha256(link.encode()).hexdigest() for link in pictures)
+        data = encode(dict(schemaVersion=2, edition=edition, thumbs=sorted({d[:12] for d in digests if d in published})))
+        files[f'v2/{edition.lower()}/thumbs.json'] = data
+        manifest['editions'][edition]['thumbs'] = hashlib.sha256(data).hexdigest()[:16]
+    files['v2/manifest.json'] = encode(manifest)
     return files
 
 
@@ -125,8 +148,11 @@ def export_static(source=ROOT / 'output', destination=ROOT / 'dist', now=None):
     files['_headers'] = HEADERS
     thumbs = {}
     try:
-        files.update(v2_files(source))
-        thumbs = thumbnail_files(source, max(0, ASSET_LIMIT - len(files)))
+        v2, links = v2_files(source)
+        files.update(v2)
+        # One list per edition joins the guide before the thumbnails share the room left.
+        thumbs = thumbnail_files(source, max(0, ASSET_LIMIT - len(files) - len(links)))
+        files.update(thumbnail_lists(files['v2/manifest.json'], links, thumbs))
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f'Schema 2 skipped: {type(error).__name__}: {str(error)[:120]}')
 
