@@ -9,3 +9,4 @@ node_modules/
 catalogue-report.json
 grabbed/
 iptvorg.channels.xml
+.pydeps/

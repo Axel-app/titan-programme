@@ -42,6 +42,12 @@ jobs:
           restore-keys: programme-v1-
       - run: npm ci --no-audit --no-fund
         if: github.event_name == 'schedule' || inputs.publish
+      # Pillow (thumbnails.py): its own folder, the runner's Python stays untouched.
+      - name: Pillow
+        continue-on-error: true
+        run: |
+          python3 -m pip install --quiet --target .pydeps pillow==11.3.0
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/.pydeps" >> "$GITHUB_ENV"
       - run: python3 -m unittest discover -s tests -v
       - name: Collect
         run: python3 collect.py --refresh-minutes 30
@@ -58,6 +64,12 @@ jobs:
         continue-on-error: true
         timeout-minutes: 12
         run: python3 collect_v2.py
+      # Small copies of the pictures on air in the next hours (only the new ones each run).
+      # A failure here never blocks the publication: the apps keep the original pictures.
+      - name: Thumbnails
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python3 thumbnails.py
       - name: Cache
         if: ${{ always() && !cancelled() }}
         uses: actions/cache/save@v4

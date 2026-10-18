@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import re
 from pathlib import Path
 import time
 
@@ -24,8 +25,17 @@ HEADERS = b'''/v1/*
   X-Content-Type-Options: nosniff
   Access-Control-Allow-Origin: *
   Referrer-Policy: no-referrer
+/t/*
+  Cache-Control: public, max-age=604800, immutable
+  Content-Type: image/jpeg
+  X-Content-Type-Options: nosniff
+  Access-Control-Allow-Origin: *
+  Referrer-Policy: no-referrer
 '''
 V2_FILE_LIMIT = 20 * 1024 * 1024
+# Static assets: 20,000 files per Worker version on the free plan. Thumbnails only fill the room
+# the guide leaves, those on air first; the apps keep the original pictures of the others.
+ASSET_LIMIT = 19500
 V1_OQEE_HOURS = 2  # the hour on air and the next one, as schema 1 always served
 
 
@@ -45,6 +55,23 @@ def v2_files(source):
             if body.get('schemaVersion') != 2 or body.get('edition') != edition or len(data) > V2_FILE_LIMIT:
                 raise ValueError(f'invalid_v2_file_{folder}_{name}')
             files[f'v2/{folder}/{name}'] = data
+    return files
+
+
+def thumbnail_files(source, room):
+    """Programme thumbnails (thumbnails.py), in their index order, at most `room`: public path → file.
+    Immutable: same path, same picture."""
+    folder = Path(source) / 'thumbs'
+    try:
+        index = json.loads((folder / 'index.json').read_bytes())
+    except (OSError, ValueError):
+        return {}
+    files = {}
+    for relative in index if isinstance(index, list) else []:
+        path = folder / str(relative)
+        if (len(files) < room and re.fullmatch(r't/[0-9a-f]{2}/[0-9a-f]{64}\.jpg', str(relative))
+                and path.is_file() and not path.is_symlink() and 0 < path.stat().st_size <= 512 * 1024):
+            files[relative] = path
     return files
 
 
@@ -96,23 +123,32 @@ def export_static(source=ROOT / 'output', destination=ROOT / 'dist', now=None):
     files['v1/manifest.json'] = encode(dict(schemaVersion=1, generatedAt=max(r['generatedAt'] for r in reports),
         refreshAfter=min(r['refreshAfter'] for r in reports), countries=reports))
     files['_headers'] = HEADERS
+    thumbs = {}
     try:
         files.update(v2_files(source))
+        thumbs = thumbnail_files(source, max(0, ASSET_LIMIT - len(files)))
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f'Schema 2 skipped: {type(error).__name__}: {str(error)[:120]}')
 
 
     if destination.exists():
         # Buckets of a previous schema 2 export (fewer buckets today, edition gone) are ours to drop.
-        for path in (destination / 'v2').rglob('*') if (destination / 'v2').is_dir() else []:
-            if path.is_file() and not path.is_symlink() and path.relative_to(destination).as_posix() not in files:
-                path.unlink()
+        # So are thumbnails whose programme left the window.
+        for folder in ('v2', 't'):
+            for path in (destination / folder).rglob('*') if (destination / folder).is_dir() else []:
+                relative = path.relative_to(destination).as_posix()
+                if path.is_file() and not path.is_symlink() and relative not in files and relative not in thumbs:
+                    path.unlink()
         for path in destination.rglob('*'):
-            if path.is_symlink() or (path.is_file() and path.relative_to(destination).as_posix() not in files):
+            relative = path.relative_to(destination).as_posix()
+            if path.is_symlink() or (path.is_file() and relative not in files and relative not in thumbs):
                 raise ValueError('destination_contains_non_public_files')
     for relative, data in files.items():
         atomic_write(destination / relative, data)
-    print(f'Export: {len(files)-1} JSON files ({sum(1 for k in files if k.startswith("v2/"))} schema 2), {sum(len(v) for k,v in files.items() if k.endswith(".json"))} bytes, {healthy} current programmes')
+    for relative, path in thumbs.items():
+        if not (destination / relative).is_file():
+            atomic_write(destination / relative, path.read_bytes())
+    print(f'Export: {len(files)-1} JSON files ({sum(1 for k in files if k.startswith("v2/"))} schema 2), {sum(len(v) for k,v in files.items() if k.endswith(".json"))} bytes, {healthy} current programmes, {len(thumbs)} thumbnails')
     return files
 
 

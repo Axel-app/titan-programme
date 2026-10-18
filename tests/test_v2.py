@@ -8,7 +8,7 @@ import unittest
 from urllib.error import HTTPError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from build_v2 import build, build_day, edition, entries, id_key
+from build_v2 import build, build_day, edition, entries, id_key, useful_picture
 from collect import COUNTRIES
 from export_static import export_static
 from test_pilot import NOW
@@ -129,6 +129,48 @@ class MergeTests(unittest.TestCase):
                 reduction('xmltvfr', 1, [dict(id='France3.fr', names=['France 3'], country='FR', programmes=p)], folder),
             ]
             self.assertEqual(len(build_day(entries(reductions, []))['FR']), 3)
+
+
+class PictureTests(unittest.TestCase):
+    def test_no_picture_icons_and_broken_links_are_left_out_genre_photos_stay(self):
+        for url in ('https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg',
+                    'https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg',
+                    'https://mediasb2c.mts.rs/medias/Left-Side-155x88-.jpg?context=bWFzdGVy',
+                    'http://dtil.tmsimg.com/tvbanners/generic/generic_tvbanners_h12.png',
+                    'https://vimg.ipko.tv/mtcms/dev/0b/f/f/0bff2b48-588e-4a3a-b69d-943d1ea62a11.jpeg',
+                    'https://epg-garcenote-assets.s3.amazonaws.com/dishtvd2h/resources/assets/thumbnails/programs/default/default_880x660.png',
+                    'https://localhost/a.jpg', 'https://[::1/a.jpg', '', None):
+            with self.subTest(url=url):
+                self.assertEqual(useful_picture(url), '')
+        for url in ('https://cdn.mitvstatic.com/programs/fallback_sport_l_m.jpg',
+                    'https://thumb.canalplus.pro/http/unsafe/640x360/filters:quality(80)/canalplus-cdn.canal-plus.io/p1/channel/50383/canal-ouah/GEN169/CANAL_3_BENIN_FALLBACK_AFR_16x9-hUNJ',
+                    'http://dtil.tmsimg.com/assets/p1_v_h8_aa.jpg', 'https://mediasb2c.mts.rs/medias/Programme-1.jpg'):
+            with self.subTest(url=url):
+                self.assertEqual(useful_picture(url), url)
+
+    def test_the_link_behind_a_dead_proxy_is_used(self):
+        inner = 'https://cdn.a1xploretv.hr/cdn_publish/epg/498x280_event_thumb/4a9b_thumb.jpg'
+        self.assertEqual(useful_picture('http://epg.bnet.hr/images/' + inner), inner)
+        self.assertEqual(useful_picture('http://epg.bnet.hr/images/logo.png'), 'http://epg.bnet.hr/images/logo.png')
+
+    def test_a_guide_of_broken_pictures_gives_way_to_one_whose_pictures_show(self):
+        with tempfile.TemporaryDirectory() as folder:
+            broken = 'https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg'
+            real = [[NOW, NOW + 3600, 'Journal', 'https://img.example/j.jpg']]
+            reductions = [
+                # The better ranked guide covers more hours, but with links that never load.
+                reduction('xmltvfr', 1, [dict(id='Rotana.Cinema.ae', names=['Rotana Cinema'], country='AE', programmes=[
+                    [NOW, NOW + 3600, 'Film', broken], [NOW + 3600, NOW + 7200, 'Film 2', broken],
+                    [NOW + 7200, NOW + 9000, 'Film 3', 'https://img.example/f.jpg']]),
+                    dict(id='Icons.ae', names=['Icons'], country='AE', programmes=[[NOW, NOW + 3600, 'X', broken]])], folder),
+                reduction('epgshare-ae1', 2, [dict(id='RotanaCinema.ae', names=['Rotana Cinema'], country='AE', programmes=real)], folder),
+            ]
+            day = build_day(entries(reductions, []))['MENA']
+            self.assertEqual([c['names'][0] for c in day], ['Rotana Cinema'])
+            self.assertEqual(day[0]['programmes'], real)
+            reductions[1] = reduction('epgshare-ae1', 2, [], folder)
+            day = build_day(entries(reductions, []))['MENA']
+            self.assertEqual(day[0]['programmes'], [[NOW + 7200, NOW + 9000, 'Film 3', 'https://img.example/f.jpg']])
 
 
 class BuildTests(unittest.TestCase):

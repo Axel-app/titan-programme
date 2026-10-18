@@ -15,6 +15,7 @@ import re
 import unicodedata
 import zlib
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from http_client import atomic_write
 from model import name_key
@@ -74,6 +75,68 @@ class Union:
         self.parent[self.find(a)] = self.find(b)
 
 
+# Picture services that resize on request: cards get about their own size (480x270) instead of
+# originals of 1920x1080 or more (Pluto's bare pictures weigh 1 MB, SFR's about 200 KB).
+SMALL_PICTURES = {
+    'images.pluto.tv': dict(fit='fill', fill='blur', fm='jpg', q='75', w='480', h='270'),
+    'dtil.tmsimg.com': dict(w='480', h='270'),
+    'static-cdn.tv.sfr.net': dict(w='480'),
+}
+
+
+def small_picture(url):
+    parts = urlsplit(url or '')
+    size = SMALL_PICTURES.get((parts.hostname or '').lower())
+    if not size or parts.username or parts.password or parts.port:
+        return url
+    query = dict(parse_qsl(parts.query, keep_blank_values=True))
+    query.update(size)
+    return urlunsplit(parts._replace(scheme='https', query=urlencode(query)))
+
+
+# Pictures that are the provider's own "no picture" icon (measured on every edition 2026-10-18).
+# Genre photos and channel visuals stay: only these say nothing about the programme, which then
+# gets the channel logo or its TMDB picture in the apps.
+NO_PICTURE = {
+    'mediasb2c.mts.rs/medias/Left-Side-155x88-.jpg',  # MTS: grey "picture" icon
+    'dtil.tmsimg.com/tvbanners/generic/generic_tvbanners_h12.png',  # Gracenote: drawn TV set
+    'vimg.ipko.tv/mtcms/dev/0b/f/f/0bff2b48-588e-4a3a-b69d-943d1ea62a11.jpeg',  # ipko: "…" bubble
+    'epg-garcenote-assets.s3.amazonaws.com/dishtvd2h/resources/assets/thumbnails/programs/default/default_880x660.png',  # Dish: "TV Program"
+}
+# Image proxies that no longer answer, in front of the provider's own link (which does).
+DEAD_PROXIES = ('http://epg.bnet.hr/images/', 'https://epg.bnet.hr/images/')
+# Changes with the rules above, so that every edition is rebuilt with them at once.
+PICTURE_RULES = 1
+
+
+def useful_picture(url):
+    """[url], the link behind a dead proxy, or '' when it never shows a picture of the programme."""
+    url = url or ''
+    for proxy in DEAD_PROXIES:
+        if url.startswith(proxy) and url[len(proxy):].startswith(('http://', 'https://')):
+            url = url[len(proxy):]
+    try:
+        parts = urlsplit(url)
+        host = (parts.hostname or '').lower()
+    except ValueError:
+        return ''
+    # 'https://sat.tvhttps://www.sat.tv/…': two links glued together, which never load (and lead
+    # to 40-pixel icons).
+    if '.' not in host or host.endswith(('http', 'https')):
+        return ''
+    return '' if host + parts.path in NO_PICTURE else url
+
+
+def card_pictures(programmes):
+    """Programmes with the picture their card shows; those left without one are dropped."""
+    result = []
+    for p in programmes:
+        picture = small_picture(useful_picture(p[3]))
+        if picture:
+            result.append([*p[:3], picture, *p[4:]])
+    return result
+
+
 def entries(reductions, operator_shards):
     """Every source channel as (edition, rank, source, id, names, programmes)."""
     result = []
@@ -82,13 +145,13 @@ def entries(reductions, operator_shards):
             ed = edition(c['country'])
             if ed:
                 result.append(dict(edition=ed, rank=reduction['rank'], source=reduction['name'], id=c['id'],
-                                   names=c['names'], programmes=c['programmes']))
+                                   names=c['names'], programmes=card_pictures(c['programmes'])))
     for shard in operator_shards:
         ed = edition(shard['country'])
         for c in shard['channels']:
             if c.get('timingStatus') != 'source-format-checked':
                 continue
-            programmes = [[e['start'], e['end'], e['title'], e['imageURL']] for e in c['programmes'] if e.get('imageURL')]
+            programmes = card_pictures([e['start'], e['end'], e['title'], e['imageURL']] for e in c['programmes'] if e.get('imageURL'))
             result.append(dict(edition=ed, rank=0, source='titan-' + c['source'], id=c.get('xmltvId') or '',
                                names=[c['name']] + c.get('aliases', []), programmes=programmes, operator=c['id']))
     return result
@@ -169,7 +232,7 @@ def guide_inputs(items, reductions):
     for item in items:
         if item['source'] in anchors:
             inputs.setdefault(item['edition'], set()).add((item['source'], anchors[item['source']]))
-    return {ed: hashlib.sha256(encode(sorted(pairs))).hexdigest()[:16] for ed, pairs in inputs.items()}
+    return {ed: hashlib.sha256(encode([PICTURE_RULES, sorted(pairs)])).hexdigest()[:16] for ed, pairs in inputs.items()}
 
 
 def write_day(output, day, now, inputs=None):
@@ -212,8 +275,8 @@ def write_live(output, editions, by_operator, operator_shards, now):
             target = by_operator.get(c['id'])
             if not target or c.get('timingStatus') != 'source-format-checked' or not now - 3600 <= c.get('fetchedAt', 0) <= now + 300:
                 continue
-            programmes = [[e['start'], e['end'], e['title'], e['imageURL']] for e in c['programmes']
-                          if e.get('imageURL') and e['end'] > now - LIVE_BEFORE and e['start'] < now + LIVE_AFTER]
+            programmes = card_pictures([e['start'], e['end'], e['title'], e['imageURL']] for e in c['programmes']
+                                       if e.get('imageURL') and e['end'] > now - LIVE_BEFORE and e['start'] < now + LIVE_AFTER)
             if programmes:
                 live.setdefault(target[0], {})[target[1]] = programmes
     versions = {}
