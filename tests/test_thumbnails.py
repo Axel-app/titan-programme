@@ -1,4 +1,5 @@
 import io
+import itertools
 import json
 from pathlib import Path
 import sys
@@ -127,6 +128,34 @@ class ThumbnailTests(unittest.TestCase):
             thumbnails.update(source, NOW, fetch=lambda url: picture(1280, 720), new_per_run=2)
             made = sorted(p.name for p in (source / 'thumbs').glob('t/*/*.jpg'))
             self.assertEqual(made, sorted(Path(thumbnails.relative_path(u)).name for u in (A, B)))
+
+    @unittest.skipIf(Image is None, 'Pillow')
+    def test_a_run_out_of_time_leaves_the_rest_for_the_next_one(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = self.guide(root, [[NOW - 600, NOW + 3000, f'P{i}', u] for i, u in enumerate((A, B, C))])
+            asked = []
+
+            def fetch(url):
+                asked.append(url)
+                return picture(1280, 720)
+
+            # Each look at the clock takes a second: time for one picture only.
+            report = thumbnails.update(source, NOW, fetch=fetch, budget=1, clock=itertools.count().__next__)
+            self.assertEqual((report['made'], report['failed'], report['light']), (1, 0, 0))
+            report = thumbnails.update(source, NOW + 60, fetch=fetch)
+            self.assertEqual(report['made'], 2)
+            self.assertEqual(sorted(asked), sorted((A, B, C)))
+
+    def test_pictures_on_air_together_are_not_taken_in_address_order(self):
+        links = [f'https://{host}.example/p.jpg' for host in 'abcdefghijklmnopqrst']
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = self.guide(root, [[NOW - 600, NOW + 3000, f'P{i}', u] for i, u in enumerate(links)])
+            wanted = thumbnails.wanted_pictures(source / 'v2', NOW)
+        self.assertEqual(sorted(wanted), links)
+        self.assertNotEqual(wanted, links)
+        self.assertEqual(wanted, sorted(links, key=thumbnails.key))
 
     @unittest.skipIf(Image is None, 'Pillow')
     def test_thumbnails_are_published_next_to_the_guide_and_leave_with_their_programme(self):

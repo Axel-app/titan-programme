@@ -34,7 +34,10 @@ AHEAD = 3600
 # Static assets: 20,000 files per Worker version on the free plan, guide files included
 # (about 650 today). The programmes on air come first; the next ones take what room is left.
 MAX_FILES = 17500
-NEW_PER_RUN = 6000
+# About 27,000 pictures on air or within the hour (all editions, 2026-10-18), then 3,000 to 7,000
+# new ones a run: a run catches up at once, within its time budget (about 47 pictures a second).
+NEW_PER_RUN = 20000
+BUDGET = 6 * 60
 RETRY_AFTER = 6 * 3600
 # Already about card size: the original is as quick as a thumbnail, no file spent on it.
 LIGHT_BYTES = 60 * 1024
@@ -59,7 +62,11 @@ def relative_path(url):
 
 
 def wanted_pictures(v2, now, limit=None):
-    """Picture links of the daily guide on air now or within AHEAD: those on air first, then the soonest."""
+    """Picture links of the daily guide on air now or within AHEAD: those on air first, then the soonest.
+
+    Mixed by their key at the same start: sorted by address, one service (Samsung TV Plus, last of the
+    alphabet) always waited for the others.
+    """
     v2 = Path(v2)
     manifest = json.loads((v2 / 'manifest.json').read_bytes())
     starts = {}
@@ -77,7 +84,7 @@ def wanted_pictures(v2, now, limit=None):
                         on_air = max(start, now)
                         if on_air < starts.get(image, on_air + 1):
                             starts[image] = on_air
-    ordered = sorted(starts, key=lambda image: (starts[image], image))
+    ordered = sorted(starts, key=lambda image: (starts[image], key(image)))
     return ordered if limit is None else ordered[:limit]
 
 
@@ -145,7 +152,8 @@ def thumbnail(data):
     return out.getvalue()
 
 
-def update(output=ROOT / 'output', now=None, fetch=download, new_per_run=NEW_PER_RUN, limit=MAX_FILES):
+def update(output=ROOT / 'output', now=None, fetch=download, new_per_run=NEW_PER_RUN, limit=MAX_FILES,
+           budget=BUDGET, clock=time.monotonic):
     """Adds the missing thumbnails, drops those whose programme ended. Never raises on a picture.
 
     thumbs/index.json lists the published ones, those on air first: the export keeps that order
@@ -165,8 +173,11 @@ def update(output=ROOT / 'output', now=None, fetch=download, new_per_run=NEW_PER
     wanted = wanted[:limit]
     missing = [url for url in wanted if not (folder / relative_path(url)).is_file() and key(url) not in retry]
     todo = missing[:new_per_run]
+    deadline = clock() + budget
 
     def make(url):
+        if clock() > deadline:  # out of time: left for the next run, like those beyond its share
+            return url, 'later'
         try:
             data = fetch(url)
             if is_light(data):
@@ -176,12 +187,14 @@ def update(output=ROOT / 'output', now=None, fetch=download, new_per_run=NEW_PER
         except Exception as error:  # a broken or refused picture keeps its original link
             return url, type(error).__name__
 
-    made, lights, failures = 0, 0, {}
+    made, lights, later, failures = 0, 0, 0, {}
     with ThreadPoolExecutor(WORKERS) as pool:
         for url, outcome in pool.map(make, todo):
             if outcome == 'light':
                 light[key(url)] = now + LIGHT_FOR
                 lights += 1
+            elif outcome == 'later':
+                later += 1
             elif outcome:
                 retry[key(url)] = now + RETRY_AFTER
                 failures[outcome] = failures.get(outcome, 0) + 1
@@ -197,7 +210,7 @@ def update(output=ROOT / 'output', now=None, fetch=download, new_per_run=NEW_PER
     atomic_write(folder / 'index.json', json.dumps(published, separators=(',', ':')).encode())
     atomic_write(state_file, json.dumps(dict(retry=retry, light=light), separators=(',', ':')).encode())
     print(f'Thumbnails: {len(wanted)} heavy or unknown pictures on air, {made} made, {lights} already light, '
-          f'{sum(failures.values())} failed {failures}, {len(missing) - len(todo)} left for the next runs, '
+          f'{sum(failures.values())} failed {failures}, {len(missing) - len(todo) + later} left for the next runs, '
           f'{len(published)} published, {dropped} dropped', flush=True)
     return dict(wanted=len(wanted), made=made, light=lights, failed=sum(failures.values()),
                 published=len(published), dropped=dropped)
